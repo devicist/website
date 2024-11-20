@@ -2,10 +2,6 @@ import React from "react";
 import classNames from "classnames";
 import { SectionSplitProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 const propTypes = {
@@ -51,21 +47,23 @@ const Capabilities = ({
 
   return (
     <section className={outerClasses} id="capabilities">
-      <div className="container">
+      <div className="container capabilities-group">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className="capabilities-list">
             <ul>
-              <li>Interaction Design</li>
-              <li>LED Displays</li>
-              <li>Kinetic Displays</li>
-              <li>Robotics</li>
+              <li>Fabrication</li>
+              <li>Industrial Design</li>
               <li>Rapid Prototyping</li>
+              <li>3D Printing</li>
+              <li>Electronics and Robotics</li>
+              <li>PCB Design and Fab</li>
+              <li>LED and Kinetic Displays</li>
+              <li>Apps and Software</li>
               <li>Computer Vision</li>
               <li>Projection Mapping</li>
-              <li>Apps and Software</li>
               <li>Simulation</li>
-              <li>Installation</li>
+              <li>Installation and Integration</li>
               <li>Remote Monitoring</li>
               <li>User Metrics</li>
             </ul>

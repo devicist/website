@@ -42,7 +42,7 @@ const Portfolio = ({
   );
 
   const Project1ModalContent = {
-    title: "Frost",
+    title: "LED lighting",
     body: "We developed interactive LED lighting for studio F-Minus' 30 foot holiday sculpture. A large illuminated snowflake occupies the atrium of Brookfield Place in Toronto. Touching the surface causes the colors to shift",
     videoUrl: "https://www.youtube.com/embed/cyy3FVcJ6sU",
     images: [
@@ -108,17 +108,17 @@ const Portfolio = ({
   };
 
   const Project3ModalContent = {
-    title: "Brain",
-    body: "Interactive model of a brain that responds to touch, displaying various patterns. Produced in collaboration with Globacore Interactive for Dassault's Digital Twin exhibit at CES 2023.",
+    title: "Illuminated Brain",
+    body: "Interactive model of a brain that responds to touch, displaying various patterns. Produced in collaboration with Globacore Interactive for Dassault Systèmes's Digital Twin exhibit at CES 2023.",
     videoUrl: "https://www.youtube.com/embed/NIznK_WQr6A",
     images: [
       {
-        src: require("./../../assets/images/portfolio/brain/brain1.jpg"),
+        src: require("./../../assets/images/portfolio/brain/brainFeature.jpg"),
         width: 1,
         height: 1,
       },
       {
-        src: require("./../../assets/images/portfolio/brain/brain2.jpg"),
+        src: require("./../../assets/images/portfolio/brain/brain5.jpg"),
         width: 1,
         height: 1,
       },
@@ -135,57 +135,11 @@ const Portfolio = ({
     ],
   };
 
-  const MoreProjects = {
-    images: [
-      {
-        src: require("./../../assets/images/portfolio/more/more1.png"),
-        width: 1.5,
-        height: 1,
-      },
-      {
-        src: require("./../../assets/images/portfolio/more/more2.png"),
-        width: 2,
-        height: 1,
-      },
-      {
-        src: require("./../../assets/images/portfolio/more/more6.png"),
-        width: 2,
-        height: 1,
-      },
-      {
-        src: require("./../../assets/images/portfolio/more/more4.png"),
-        width: 2.5,
-        height: 1,
-      },
-      {
-        src: require("./../../assets/images/portfolio/more/more5.png"),
-        width: 1.5,
-        height: 1,
-      },
-
-      {
-        src: require("./../../assets/images/portfolio/more/more3.png"),
-        width: 1.5,
-        height: 1,
-      },
-    ],
-  };
-
   //edit section header content here
   const sectionHeader = {
-    title: "Case Study",
+    title: "Featured Projects",
     // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
   };
-
-  const subHeader = {
-    title: "More Projects",
-    // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
-  };
-
-  // const subSubHeader = {
-  //   title: "And Many More",
-  //   // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
-  // };
 
   const [openP1, setOpenP1] = useState(false);
   const [openP2, setOpenP2] = useState(false);
@@ -216,25 +170,23 @@ const Portfolio = ({
   return (
     <section id="work">
       <div className={innerClasses}>
-        <div className="container">
+        <div className="container reveal-from-bottom mt-32">
           {/*this is a seperate .js file found in sections > partials*/}
-          <SectionHeader
-            data={sectionHeader}
-            className="center-content mt-64"
-          />
+          <SectionHeader data={sectionHeader} className="center-content mt-0" />
 
           <Link to="/flux">
-            <div className="reveal-from-bottom">
+            <div className="">
+              {/* <div className=""> */}
               <Card className="caseStudyCard">
                 <video className="caseStudyImg" autoPlay loop muted playsInline>
                   <source src={flux} type="video/mp4" />
                 </video>
                 <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
-                  <Card.Title className="mt-auto caseStudyTitle">
-                    Flux
+                  <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
+                    Shopify
                   </Card.Title>
-                  <Card.Text className="caseStudyText">
-                    A large-scale kinetic installation for Shopify.
+                  <Card.Text className="caseStudyText has-text-shadow">
+                    A large-scale kinetic installation for the office café.
                     {/* 40 metalic prisms
                     are rotated in coordinated patterns to create waves of
                     refracted light. */}
@@ -253,112 +205,119 @@ const Portfolio = ({
             </div>
           </Link>
 
-          <SectionHeader
+          {/* <SectionHeader
             data={subHeader}
             className="center-content pb-0 mt-64"
-          />
-          <div className={tilesClasses}>
-            <div className="reveal-from-bottom projectGrid">
-              <button
-                className="projectButton border-0"
-                onClick={onOpenModalP3}
-              >
-                <Card className="bg-black projectCard">
-                  <Card.Img
-                    className="tintMinor"
-                    src={require("./../../assets/images/portfolio/brain/brainCover.png")}
-                  />
-                  <Card.ImgOverlay>
-                    <Card.Body>
-                      <Card.Title className="projectTitle">Brain</Card.Title>
-                    </Card.Body>
-                  </Card.ImgOverlay>
-                </Card>
-              </button>
-            </div>
+          /> */}
+          <div className="mt-64">
+            <div className={tilesClasses}>
+              <div className="reveal-from-bottom projectGrid">
+                <button
+                  className="projectButton border-0"
+                  onClick={onOpenModalP3}
+                >
+                  <Card className="bg-black projectCard">
+                    <Card.Img
+                      // className="tintMinor"
+                      src={require("./../../assets/images/portfolio/brain/brainFeature.jpg")}
+                    />
+                    <Card.ImgOverlay>
+                      <Card.Body>
+                        <Card.Title className="projectTitle">
+                          Dassault
+                        </Card.Title>
+                      </Card.Body>
+                    </Card.ImgOverlay>
+                  </Card>
+                </button>
+              </div>
 
-            <div className="reveal-from-left projectGrid">
-              <button
-                className="projectButton border-0"
-                onClick={onOpenModalP2}
-              >
-                <Card className="bg-black projectCard ">
-                  <Card.Img
-                    className="tintMajor"
-                    src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
-                  />
-                  <Card.ImgOverlay>
-                    <Card.Body>
-                      <Card.Title className="projectTitle">Braking</Card.Title>
-                    </Card.Body>
-                  </Card.ImgOverlay>
-                </Card>
-              </button>
-            </div>
+              <div className="reveal-from-left projectGrid">
+                <button
+                  className="projectButton border-0"
+                  onClick={onOpenModalP2}
+                >
+                  <Card className="bg-black projectCard ">
+                    <Card.Img
+                      className="tintMajor"
+                      src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
+                    />
+                    <Card.ImgOverlay>
+                      <Card.Body>
+                        <Card.Title className="projectTitle">KIA</Card.Title>
+                      </Card.Body>
+                    </Card.ImgOverlay>
+                  </Card>
+                </button>
+              </div>
 
-            <div className="reveal-from-right projectGrid">
-              <button
-                className="projectButton border-0"
-                onClick={onOpenModalP1}
-              >
-                <Card className="bg-black projectCard">
-                  <Card.Img
-                    src={require("./../../assets/images/portfolio/Snowflake/snowflakeNewCover.png")}
-                  />
-                  <Card.ImgOverlay className=" d-flex flex-column">
-                    <Card.Body>
-                      <Card.Title className="projectTitle">Frost</Card.Title>
-                    </Card.Body>
-                  </Card.ImgOverlay>
-                </Card>
-              </button>
-            </div>
+              <div className="reveal-from-right projectGrid">
+                <button
+                  className="projectButton border-0"
+                  onClick={onOpenModalP1}
+                >
+                  <Card className="bg-black projectCard">
+                    <Card.Img
+                      className="tintMinor"
+                      src={require("./../../assets/images/portfolio/Snowflake/snowflakeNewCover.png")}
+                    />
+                    <Card.ImgOverlay className=" d-flex flex-column">
+                      <Card.Body>
+                        <Card.Title className="projectTitle">
+                          BCE Place
+                        </Card.Title>
+                      </Card.Body>
+                    </Card.ImgOverlay>
+                  </Card>
+                </button>
+              </div>
 
-            <Modal
-              open={openP1}
-              onClose={onCloseModal}
-              center
-              closeIcon={closeIcon}
-              classNames={{
-                modal: "projectModal",
-                overlay: "projectOverlay",
-                // modalAnimationIn: "customEnterModalAnimation",
-                // modalAnimationOut: "customLeaveModalAnimation",
-              }}
-              animationDuration={800}
-            >
-              <ProjectModal {...Project1ModalContent} />
-            </Modal>
-            <Modal
-              open={openP2}
-              onClose={onCloseModal}
-              center
-              closeIcon={closeIcon}
-              classNames={{
-                modal: "projectModal",
-                overlay: "projectOverlay",
-                // modalAnimationIn: "customEnterModalAnimation",
-                //modalAnimationOut: "customLeaveModalAnimation",
-              }}
-              animationDuration={800}
-            >
-              <ProjectModal {...Project2ModalContent} />
-            </Modal>
-            <Modal
-              open={openP3}
-              onClose={onCloseModal}
-              center
-              closeIcon={closeIcon}
-              classNames={{
-                modal: "projectModal",
-                overlay: "projectOverlay",
-                //modalAnimationIn: "customEnterModalAnimation",
-                //modalAnimationOut: "customLeaveModalAnimation",
-              }}
-              animationDuration={800}
-            >
-              <ProjectModal {...Project3ModalContent} />
-            </Modal>
+              <Modal
+                open={openP1}
+                onClose={onCloseModal}
+                center
+                closeIcon={closeIcon}
+                classNames={{
+                  modal: "projectModal",
+                  overlay: "projectOverlay",
+                  // modalAnimationIn: "customEnterModalAnimation",
+                  // modalAnimationOut: "customLeaveModalAnimation",
+                }}
+                animationDuration={800}
+              >
+                <ProjectModal {...Project1ModalContent} />
+              </Modal>
+              <Modal
+                open={openP2}
+                onClose={onCloseModal}
+                center
+                closeIcon={closeIcon}
+                classNames={{
+                  modal: "projectModal",
+                  overlay: "projectOverlay",
+                  // modalAnimationIn: "customEnterModalAnimation",
+                  //modalAnimationOut: "customLeaveModalAnimation",
+                }}
+                animationDuration={800}
+              >
+                <ProjectModal {...Project2ModalContent} />
+              </Modal>
+              <Modal
+                open={openP3}
+                onClose={onCloseModal}
+                center
+                closeIcon={closeIcon}
+                classNames={{
+                  modal: "projectModal",
+                  overlay: "projectOverlay",
+                  //modalAnimationIn: "customEnterModalAnimation",
+                  //modalAnimationOut: "customLeaveModalAnimation",
+                }}
+                animationDuration={800}
+              >
+                <ProjectModal {...Project3ModalContent} />
+              </Modal>
+            </div>
           </div>
         </div>
       </div>

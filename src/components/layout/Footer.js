@@ -24,7 +24,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
             <Logo />
             <FooterSocial />
           </div>
-          <div className="footer-bottom space-between text-xxs invert-order-desktop">
+          <div className="footer-bottom text-xxs invert-order-desktop">
             <FooterNav />
           </div>
         </div>

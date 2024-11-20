@@ -203,7 +203,12 @@ fieldset {
 
 textarea.form-input {
 	height: auto;
+	min-height: 100px;
     resize: vertical;
+	width: 100%;
+	padding: (($button-form--height - get-line-height(input) - ($button-form--border-width * 2)) * 0.5) ($form--padding-h - $button-form--border-width);
+	@include font-size(input);
+	@include font-weight(input);
 }
 
 .form-select {

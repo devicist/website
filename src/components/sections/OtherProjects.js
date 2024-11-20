@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from "react";
-import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
-import companyLogos from "./../../assets/images/companyLogos.png";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
@@ -40,56 +38,64 @@ const OtherProjects = ({
   const gallery = {
     images: [
       {
-        src: require("./../../assets/images/portfolio/more/more2.jpg"),
+        src: require("./../../assets/images/portfolio/more/more12.jpg"),
         width: 2,
         height: 1,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        title: "Tactile Robot for Ontario Science Center",
       },
       {
-        src: require("./../../assets/images/portfolio/more/more1.jpg"),
+        src: require("./../../assets/images/portfolio/more/more11.jpg"),
         width: 2,
         height: 1,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        title: "VR Controller for Intel",
       },
       {
-        src: require("./../../assets/images/portfolio/more/more5.jpg"),
+        src: require("./../../assets/images/portfolio/more/more9.png"),
         width: 2,
-        height: 2,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        height: 1,
+        title: "Charging Demo for Hyundai",
       },
       {
         src: require("./../../assets/images/portfolio/more/more3.jpg"),
-        width: 1,
+        width: 1.1,
         height: 1,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        // className: "tintMinor",
+        title: "Reactive LED lighting for Bristol Myers Squibb",
       },
       {
         src: require("./../../assets/images/portfolio/more/more4.jpg"),
         width: 2,
         height: 1,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        // className: "tintMinor",
+        title: "App for LED Graffiti Wall for Telus",
       },
-
       {
-        src: require("./../../assets/images/portfolio/more/more6.jpg"),
-        width: 1,
+        src: require("./../../assets/images/portfolio/more/more5.jpg"),
+        width: 1.1,
         height: 1,
-        //title:
-        // "This is a caption description of what the image above depicts. Text would go here to give context about the details of this image",
+        // className: "tintMinor",
+        title: "VR Position Tracker for OSRAM",
+      },
+      // {
+      //   src: require("./../../assets/images/portfolio/more/more6.jpg"),
+      //   width: 1,
+      //   height: 1,
+      //   className: "tintMinor",
+      //   title: "NFC Scanners for Intel",
+      // },
+      {
+        src: require("./../../assets/images/portfolio/more/more8.png"),
+        width: 2,
+        height: 1,
+        title: "LED Generative Art Wall",
       },
     ],
   };
 
   return (
     <section id="work">
-      <div className="container-sm reveal-from-bottom">
-        <h3 className="ta-c">And Many More</h3>
-        <img src={companyLogos} alt="Company Logos" className="mt-32" />
+      <div className="container-sm reveal-from-bottom mt-16">
+        {/* <h3 className="ta-c">More</h3> */}
         <div className=" container-sm cs-gridWrapper reveal-from-bottom">
           <Gallery
             photos={gallery.images}

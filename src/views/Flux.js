@@ -1,7 +1,6 @@
 import React from "react";
 // import sections
 import Intro from "../components/sections/CaseStudy/Intro";
-import FirstContact from "../components/sections/CaseStudy/FirstContact";
 import Design from "../components/sections/CaseStudy/Design";
 import Build from "../components/sections/CaseStudy/Build";
 import Deploy from "../components/sections/CaseStudy/Deploy";
@@ -12,12 +11,6 @@ const IntroContent = {
     "We designed and built a 40 foot kinetic installation for Shopify's Offices in Toronto. Metallic prisms are rotated in coordinated patterns to create rolling waves of refracted light.",
   imgSrc: require("./../assets/images/fluxOutline.png"),
   videoUrl: "https://www.youtube.com/embed/Z2o9WQWpmp4",
-};
-
-const FirstContactContent = {
-  subject: "Shopify Ceiling",
-  greeting: "Hi Guys,",
-  body: "There's an opportunity that would be in your wheelhouse...As you walk down the main path, an overhead canopy creates waves and casts light, providing surprise and delight.",
 };
 
 const DesignContent = {
@@ -104,7 +97,7 @@ const Flux = () => {
   return (
     <>
       <Intro {...IntroContent} />
-      <FirstContact {...FirstContactContent} />
+      {/* <FirstContact {...FirstContactContent} /> */}
       <Design {...DesignContent} />
       <Build {...BuildContent} />
       <Deploy {...DeployContent} />
