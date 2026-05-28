@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
@@ -144,16 +144,35 @@ const Portfolio = ({
   const [openP1, setOpenP1] = useState(false);
   const [openP2, setOpenP2] = useState(false);
   const [openP3, setOpenP3] = useState(false);
+  const modalOpen = useRef(false);
 
-  const onOpenModalP1 = () => setOpenP1(true);
-  const onOpenModalP2 = () => setOpenP2(true);
-  const onOpenModalP3 = () => setOpenP3(true);
+  const onOpenModalP1 = () => { setOpenP1(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
+  const onOpenModalP2 = () => { setOpenP2(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
+  const onOpenModalP3 = () => { setOpenP3(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
 
   const onCloseModal = () => {
     setOpenP1(false);
     setOpenP2(false);
     setOpenP3(false);
+    if (modalOpen.current) {
+      modalOpen.current = false;
+      window.history.back();
+    }
   };
+
+  useEffect(() => {
+    const handlePopState = (e) => {
+      // Only close if we've gone past the modal entry (not just back to it from the lightbox)
+      if (modalOpen.current && e.state?.type !== "modal") {
+        modalOpen.current = false;
+        setOpenP1(false);
+        setOpenP2(false);
+        setOpenP3(false);
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
   const closeIcon = (
     <svg
       fill="#FFFFFF"
