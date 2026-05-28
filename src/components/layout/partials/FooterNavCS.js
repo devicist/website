@@ -13,7 +13,7 @@ const FooterNavCS = ({ className, ...props }) => {
           <Link to="/#work">Work</Link>
         </li>
         <li>
-          <Link to="/#process">Process</Link>
+          <Link to="/#about">About</Link>
         </li>
         <li>
           <Link to="/#contact">Contact</Link>

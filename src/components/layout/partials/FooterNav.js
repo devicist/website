@@ -14,8 +14,8 @@ const FooterNav = ({ className, ...props }) => {
           </Link>
         </li>
         <li>
-          <Link to="process" smooth={true} duration={500}>
-            Process
+          <Link to="about" smooth={true} duration={500}>
+            About
           </Link>
         </li>
         <li>

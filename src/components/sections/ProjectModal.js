@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 
 import SectionHeader from "./partials/SectionHeader";
 import Gallery from "react-photo-gallery";
@@ -8,16 +8,34 @@ import VideoEmbed from "../elements/VideoEmbed";
 const ProjectModal = (ProjectModalContent) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  const lightboxOpen = useRef(false);
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
+    window.history.pushState({ type: "lightbox" }, "");
+    lightboxOpen.current = true;
   }, []);
 
   const closeLightbox = () => {
     setCurrentImage(0);
     setViewerIsOpen(false);
+    if (lightboxOpen.current) {
+      lightboxOpen.current = false;
+      window.history.back();
+    }
   };
+
+  useEffect(() => {
+    const handlePopState = (e) => {
+      if (lightboxOpen.current && e.state?.type !== "lightbox") {
+        lightboxOpen.current = false;
+        setViewerIsOpen(false);
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const sectionHeader = {
     title: ProjectModalContent.title,

@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { HashLink as Link } from "react-router-hash-link";
 import { SectionSplitProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import {
@@ -87,8 +88,9 @@ const FeaturesSplit = ({
             >
               <h3 className="vertical-timeline-element-title">Foundation</h3>
               <p>
-                20+ years building interactive exhibits. We take big ideas and
-                make them tangible, while mitigating risks.
+                Whether you have a project in mind or want to explore
+                possibilities, we have the experience and passion to help you
+                achieve your creative goals.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -121,8 +123,9 @@ const FeaturesSplit = ({
             >
               <h3 className="vertical-timeline-element-title">Design</h3>
               <p>
-                We research, ideate, source, model and detail until the optimal
-                design is reached.
+                We talk to stakeholders, research, ideate, source, model and
+                detail until the correct design is reached. We engineer simple,
+                robust solutions optimized for fast delivery.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -155,9 +158,9 @@ const FeaturesSplit = ({
             >
               <h3 className="vertical-timeline-element-title">Build</h3>
               <p>
-                We develop code, electronics, and mechanisms. We fabricate and
-                integrate components to completion. We build prototypes,
-                simulations and tools for stakeholders.
+                We'll build your project in whole, or as part of your team,
+                developing visualizations, prototypes and finished products as
+                needed.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -190,9 +193,8 @@ const FeaturesSplit = ({
             >
               <h3 className="vertical-timeline-element-title">Deploy</h3>
               <p>
-                Show time! We deliver and install the project ensuring it
-                surpasses expectations. We can collect user metrics to measure
-                results.
+                We integrate our work into your project or space ensuring each
+                element surpasses expectations.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -225,10 +227,9 @@ const FeaturesSplit = ({
             >
               <h3 className="vertical-timeline-element-title">Support</h3>
               <p>
-                Obsessed with reliability, we engineer simple, robust and
-                modular solutions. We maintain the project over it's lifetime
-                through in-person and remote support, and can push updates to
-                keep the content fresh.
+                We provide in-person and remote support. We can push updates to
+                keep the content fresh and collect user metrics to measure
+                results.
               </p>
             </VerticalTimelineElement>
           </VerticalTimeline>

@@ -110,13 +110,13 @@
 .projectCard{
 	border: none !important;
 	background-color: transparent !important;
-	text-shadow: 5px 5px 15px black, -5px -5px 15px black;
+	text-shadow: 0px 0px 15px black
 }
 .tintMinor{
 	opacity: 0.85;
 }
 .tintMajor{
-	opacity: 0.75;
+	opacity: 0.7;
 }
 .projectGrid{
 	display: inline-block;
@@ -157,8 +157,8 @@
 	display: block;
 	position: relative;
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgb(0, 0, 0) 100%);
-	margin-top: -350px;
-	height: 350px;
+	margin-top: -300px;
+	height: 300px;
 	@include media('<medium') {
 		margin-top: -250px;
 		height: 250px;
@@ -179,7 +179,7 @@
 }
 .caseStudyText{
 	@include media('<medium') {
-			font-size: 15px;
+			font-size: 20px;
 			margin-bottom: 0;
 		}
 }
@@ -194,6 +194,7 @@
 
 .projectTitle{
 	font-weight: bold;
+	text-shadow: 0px 0px 10px #000;
 	font-size: 1rem;
 	margin-top: 40%;
 		@include media('>large') {
