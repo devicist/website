@@ -80,6 +80,7 @@ const Header = ({
   );
 
   return (
+    <>
     <header {...props} className={classes}>
       <div className="container">
         <div
@@ -113,6 +114,15 @@ const Header = ({
                     )}
                   >
                     <li>
+                      <button
+                        className="header-nav-pet-btn"
+                        onClick={() => { window.dispatchEvent(new Event('openPetModal')); closeMenu(); }}
+                      >
+                        PET
+                      </button>
+                    </li>
+
+                    <li>
                       <Link
                         to="work"
                         spy={true}
@@ -123,16 +133,16 @@ const Header = ({
                         Work
                       </Link>
                     </li>
-                    
+
                     <li>
                       <Link
-                        to="concepts"
+                        to="about"
                         spy={true}
                         smooth={true}
                         duration={500}
                         onClick={closeMenu}
                       >
-                        Concepts
+                        About
                       </Link>
                     </li>
 
@@ -171,6 +181,7 @@ const Header = ({
         </div>
       </div>
     </header>
+    </>
   );
 };
 

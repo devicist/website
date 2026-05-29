@@ -10,94 +10,116 @@
 }
 
 .pet-modal {
-  background: #111111;
-  max-width: 900px;
+  background: #111;
+  max-width: 960px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #c7c7c7;
 }
 
 .pet-modal-close {
   position: absolute;
   top: 16px;
   right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
-  color: #717D86;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
   padding: 0;
+  cursor: pointer;
   z-index: 1;
-  transition: color 0.15s ease;
+  font-size: 0;
 }
 
-.pet-modal-close:hover {
-  color: #ECEDED;
+.pet-modal-close::before,
+.pet-modal-close::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: #717d86;
+  transition: background 0.15s ease;
+}
+
+.pet-modal-close::before {
+  transform: rotate(45deg);
+}
+
+.pet-modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.pet-modal-close:hover::before,
+.pet-modal-close:hover::after {
+  background: #c7c7c7;
+}
+
+.pet-modal-image {
+  aspect-ratio: 1340 / 687;
+  overflow: hidden;
 }
 
 .pet-modal-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .pet-modal-text {
-  padding: 36px 40px 44px;
+  padding: 48px 32px 64px;
 }
 
-
-.pet-modal-text p {
-  font-size: 15px;
+.pet-modal-text > p {
+  margin: 0;
   line-height: 1.75;
-  color: #c7c7c7;
-  margin: 0 0 16px;
-}
-
-.pet-modal-text p:last-child {
-  margin-bottom: 0;
 }
 
 .pet-modal-faq {
-  margin: 24px 0 0;
+  margin: 32px 0 0;
 }
 
 .pet-modal-faq > div {
-  border-top: 1px solid #1e1e1e;
+  border-top: 1px solid #111;
   padding: 14px 0;
 }
 
 .pet-modal-faq > div:last-child {
-  border-bottom: 1px solid #1e1e1e;
+  border-bottom: 1px solid #111;
 }
 
 .pet-modal-faq dt {
-  font-size: 13px;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #ECEDED;
-  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #eceded;
+  margin-bottom: 6px;
 }
 
 .pet-modal-faq dd {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #c7c7c7;
+  line-height: 1.7;
 }
 
 .pet-modal-faq dd a,
 .pet-modal-list-btn {
-  color: #ECEDED;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  color: #eceded;
+  text-decoration: none;
 }
 
 .pet-modal-faq dd a:hover,
 .pet-modal-list-btn:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 .pet-modal-list-btn {
@@ -107,5 +129,22 @@
   cursor: pointer;
   font-size: inherit;
   font-family: inherit;
+  line-height: inherit;
 }
 
+.header-nav-pet-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: #c7c7c7;
+  font-family: "Inter", sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+  padding: 0 32px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.header-nav-pet-btn:hover {
+  color: #eceded;
+}

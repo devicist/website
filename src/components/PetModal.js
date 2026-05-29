@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import './PetModal.css';
 
 const PetModal = () => {
   const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const open = () => setIsOpen(true);
+    window.addEventListener('openPetModal', open);
+    return () => window.removeEventListener('openPetModal', open);
+  }, []);
 
   if (!isOpen) return null;
 
   return (
     <div className="pet-modal-overlay" onClick={() => setIsOpen(false)}>
       <div className="pet-modal" onClick={e => e.stopPropagation()}>
-        <button className="pet-modal-close" onClick={() => setIsOpen(false)} aria-label="Close">
-          &#215;
-        </button>
+        <button className="pet-modal-close" onClick={() => setIsOpen(false)} aria-label="Close" />
         <div className="pet-modal-image">
           <img src="/pet_held.jpg" alt="PET robot being cradled in arms" />
         </div>
@@ -32,11 +37,11 @@ const PetModal = () => {
             </div>
             <div>
               <dt>Is PET for Sale?</dt>
-              <dd>Yes, this version is made to order as a limited edition. Contact me if you would like one.</dd>
+              <dd>Yes, this version is made to order as a limited edition. <HashLink to="/#contact" onClick={() => setIsOpen(false)}><u>Contact me</u></HashLink> if you would like one.</dd>
             </div>
             <div>
               <dt>How do I learn more?</dt>
-              <dd><a href="/pet.pdf" target="_blank" rel="noopener noreferrer">Read the overview.</a> <button className="pet-modal-list-btn" onClick={() => window.dojoRequire && window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us21.list-manage.com","uuid":"1960e060b6a123cf33b617dd7","lid":"f2d11f02d0be2c5747f0ab3a8"}) })}>Sign up for the mailing list.</button></dd>
+              <dd><a href="/pet.pdf" target="_blank" rel="noopener noreferrer"><u>Read</u> the overview.</a> <button className="pet-modal-list-btn" onClick={() => window.dojoRequire && window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us21.list-manage.com","uuid":"1960e060b6a123cf33b617dd7","lid":"f2d11f02d0be2c5747f0ab3a8"}) })}><u>Sign up</u> for the mailing list.</button></dd>
             </div>
           </dl>
         </div>
