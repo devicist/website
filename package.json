@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://devicist.com",
   "private": true,
   "dependencies": {
     "@web3forms/react": "^1.1.3",
