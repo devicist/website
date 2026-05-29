@@ -4,3 +4,25 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+.site-header-inner {
+  height: 60px !important;
+}
+
+.site-header + .site-content .section:first-of-type {
+  padding-top: 60px !important;
+}
+
+@media (max-width: 640px) {
+  .header-nav-toggle + .header-nav {
+    background: rgba(0, 0, 0, 0.72) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@media (min-width: 641px) {
+  .header-nav-toggle + .header-nav {
+    background: transparent !important;
+  }
+}

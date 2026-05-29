@@ -1,0 +1,26 @@
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: normal;
+}
+
+@media (max-width: 640px) {
+  .hero .section-inner {
+    padding-top: 68px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .hero img[alt="Open"] {
+    width: 150px !important;
+    height: auto !important;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+}

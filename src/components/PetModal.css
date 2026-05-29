@@ -145,6 +145,14 @@
   transition: color 0.15s ease;
 }
 
-.header-nav-pet-btn:hover {
+.header-nav-pet-btn:hover,
+.header-nav-pet-btn:active {
   color: #eceded;
+}
+
+/* Mobile dropdown — match .header-nav-toggle+.header-nav ul a:not(.button) */
+.header-nav-toggle + .header-nav .header-nav-pet-btn {
+  display: inline-flex;
+  color: #eceded;
+  padding: 12px 32px;
 }
