@@ -1,0 +1,111 @@
+.pet-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.pet-modal {
+  background: #111111;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #717D86;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: color 0.15s ease;
+}
+
+.pet-modal-close:hover {
+  color: #ECEDED;
+}
+
+.pet-modal-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pet-modal-text {
+  padding: 36px 40px 44px;
+}
+
+
+.pet-modal-text p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c7c7c7;
+  margin: 0 0 16px;
+}
+
+.pet-modal-text p:last-child {
+  margin-bottom: 0;
+}
+
+.pet-modal-faq {
+  margin: 24px 0 0;
+}
+
+.pet-modal-faq > div {
+  border-top: 1px solid #1e1e1e;
+  padding: 14px 0;
+}
+
+.pet-modal-faq > div:last-child {
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.pet-modal-faq dt {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ECEDED;
+  margin-bottom: 4px;
+}
+
+.pet-modal-faq dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c7c7c7;
+}
+
+.pet-modal-faq dd a,
+.pet-modal-list-btn {
+  color: #ECEDED;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pet-modal-faq dd a:hover,
+.pet-modal-list-btn:hover {
+  color: #ffffff;
+}
+
+.pet-modal-list-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+

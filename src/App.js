@@ -4,6 +4,7 @@ import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import ScrollToTop from "./utils/ScrollToTop";
 import ReactGA from "react-ga";
+import PetModal from "./components/PetModal";
 
 // Layouts
 import HomeLayout from "./layouts/HomeLayout";
@@ -36,6 +37,7 @@ const App = () => {
 
   return (
     <ScrollToTop>
+      <PetModal />
       <ScrollReveal
         ref={childRef}
         children={() => (
