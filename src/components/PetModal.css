@@ -132,6 +132,60 @@
   line-height: inherit;
 }
 
+.mc-signup-form {
+  display: block;
+  margin-top: 12px;
+}
+
+.mc-signup-thanks {
+  margin-top: 8px;
+  color: #c7c7c7;
+}
+
+.mc-signup-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.mc-signup-input {
+  background: #000;
+  border: 1px solid #333;
+  color: #eceded;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  padding: 7px 12px;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.mc-signup-input::placeholder {
+  color: #717d86;
+}
+
+.mc-signup-input:focus {
+  border-color: #717d86;
+}
+
+.mc-signup-submit {
+  background: #eceded;
+  border: none;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.mc-signup-submit:hover {
+  background: #fff;
+}
+
 .header-nav-pet-btn {
   display: block;
   background: none;

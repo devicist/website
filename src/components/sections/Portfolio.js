@@ -118,7 +118,7 @@ const Portfolio = ({
         height: 1,
       },
       {
-        src: require("./../../assets/images/portfolio/brain/brain2.jpg"),
+        src: require("./../../assets/images/portfolio/brain/brain2.JPG"),
         width: 1,
         height: 1,
       },

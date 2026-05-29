@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import MailchimpSignup from './MailchimpSignup';
 import './PetModal.css';
 
 const PetModal = () => {
@@ -41,7 +42,7 @@ const PetModal = () => {
             </div>
             <div>
               <dt>How do I learn more?</dt>
-              <dd><a href="/pet.pdf" target="_blank" rel="noopener noreferrer"><u>Read</u> the overview.</a> <button className="pet-modal-list-btn" onClick={() => window.open('https://us14.list-manage.com/contact-form?u=1960e060b6a123cf33b617dd7&form_id=29e77a96fecc8b75489fa8da499cdf2b', '_blank')}><u>Sign up</u></button> for the mailing list.</dd>
+              <dd><a href="/pet.pdf" target="_blank" rel="noopener noreferrer"><u>Read</u> the overview.</a> <MailchimpSignup /></dd>
             </div>
           </dl>
         </div>
