@@ -123,18 +123,30 @@ const Header = ({
                         Work
                       </Link>
                     </li>
-
+                    
                     <li>
                       <Link
-                        to="about"
+                        to="concepts"
                         spy={true}
                         smooth={true}
                         duration={500}
                         onClick={closeMenu}
                       >
-                        About
+                        Concepts
                       </Link>
                     </li>
+
+                    {/* <li>
+                      <Link
+                        to="process"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onClick={closeMenu}
+                      >
+                        Process
+                      </Link>
+                    </li> */}
                   </ul>
                   {!hideSignin && (
                     <ul className="list-reset header-nav-right">
