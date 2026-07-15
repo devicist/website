@@ -33,12 +33,12 @@ const Portfolio = ({
 }) => {
   const innerClasses = classNames(
     "portfolio-inner section-inner",
-    bottomDivider && "has-bottom-divider"
+    bottomDivider && "has-bottom-divider",
   );
 
   const tilesClasses = classNames(
     "center-content mt-16 container",
-    pushLeft && "push-left"
+    pushLeft && "push-left",
   );
 
   const Project1ModalContent = {
@@ -146,9 +146,21 @@ const Portfolio = ({
   const [openP3, setOpenP3] = useState(false);
   const modalOpen = useRef(false);
 
-  const onOpenModalP1 = () => { setOpenP1(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
-  const onOpenModalP2 = () => { setOpenP2(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
-  const onOpenModalP3 = () => { setOpenP3(true); window.history.pushState({ type: "modal" }, ""); modalOpen.current = true; };
+  const onOpenModalP1 = () => {
+    setOpenP1(true);
+    window.history.pushState({ type: "modal" }, "");
+    modalOpen.current = true;
+  };
+  const onOpenModalP2 = () => {
+    setOpenP2(true);
+    window.history.pushState({ type: "modal" }, "");
+    modalOpen.current = true;
+  };
+  const onOpenModalP3 = () => {
+    setOpenP3(true);
+    window.history.pushState({ type: "modal" }, "");
+    modalOpen.current = true;
+  };
 
   const onCloseModal = () => {
     setOpenP1(false);
@@ -202,23 +214,23 @@ const Portfolio = ({
                 </video>
                 <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
                   <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
-                    Shopify
+                    Flux
                   </Card.Title>
                   <Card.Text className="caseStudyText has-text-shadow">
-                    A large-scale kinetic installation for the office café.
+                    {/* A large-scale kinetic installation for the office café. */}
                     {/* 40 metalic prisms
                     are rotated in coordinated patterns to create waves of
                     refracted light. */}
                   </Card.Text>
-                  <Link to="/flux">
+                  {/* <Link to="/flux">
                     <Button
                       className="caseStudyButton"
                       variant="primary"
                       onClick={onOpenModalP2}
                     >
-                      Learn more
+                      Flux
                     </Button>
-                  </Link>
+                  </Link> */}
                 </Card.ImgOverlay>
               </Card>
             </div>
@@ -242,9 +254,9 @@ const Portfolio = ({
                     />
                     <Card.ImgOverlay>
                       <Card.Body>
-                        <Card.Title className="projectTitle">
+                        {/* <Card.Title className="projectTitle">
                           Dassault
-                        </Card.Title>
+                        </Card.Title> */}
                       </Card.Body>
                     </Card.ImgOverlay>
                   </Card>
@@ -262,9 +274,9 @@ const Portfolio = ({
                       src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
                     />
                     <Card.ImgOverlay>
-                      <Card.Body>
+                      {/* <Card.Body>
                         <Card.Title className="projectTitle">KIA</Card.Title>
-                      </Card.Body>
+                      </Card.Body> */}
                     </Card.ImgOverlay>
                   </Card>
                 </button>
@@ -282,9 +294,9 @@ const Portfolio = ({
                     />
                     <Card.ImgOverlay className=" d-flex flex-column">
                       <Card.Body>
-                        <Card.Title className="projectTitle">
+                        {/* <Card.Title className="projectTitle">
                           BCE Place
-                        </Card.Title>
+                        </Card.Title> */}
                       </Card.Body>
                     </Card.ImgOverlay>
                   </Card>

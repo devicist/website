@@ -34,13 +34,13 @@ const About = ({
     bottomOuterDivider && "has-bottom-divider",
     hasBgColor && "has-bg-color",
     invertColor && "invert-color",
-    className
+    className,
   );
 
   const innerClasses = classNames(
     "features-split-inner section-inner",
     topDivider && "has-top-divider",
-    bottomDivider && "has-bottom-divider"
+    bottomDivider && "has-bottom-divider",
   );
 
   const sectionHeader = {
@@ -60,9 +60,9 @@ const About = ({
                 className="portrait center-content"
               />
               <div className="container-sm txt">
-                <b>Devicist</b> is the studio of <b>Nick Stedman</b>, a creative
-                technologist and university lecturer with over 20 years of
-                experience building innovative projects with electronics,
+                <b>Devicist</b> is the studio of <b>Nick Stedman</b>, an artist,
+                creative technologist and university lecturer with over 20 years
+                of experience building innovative projects with electronics,
                 coding, and fabrication. His robotic artworks have been
                 showcased globally, including at Ars Electronica, the Ontario
                 Science Center, and on Japanese TV. Since founding Devicist in
