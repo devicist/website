@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import videoBg from "../../assets/videos/videoBg-newFootage2.mp4";
@@ -35,9 +35,24 @@ const Hero = ({
     bottomDivider && "has-bottom-divider"
   );
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    // React sets `muted` as a DOM property, not a reflected attribute, so
+    // react-snap's prerendered HTML omits it and browsers block the
+    // unmuted autoplay attempt before hydration runs. Set the attribute
+    // explicitly so it's present in both the live DOM and the snapshot.
+    video.setAttribute("muted", "");
+    video.defaultMuted = true;
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
+
   return (
     <section {...props} className={outerClasses}>
-      <video className="videoBg" autoPlay loop muted playsInline>
+      <video ref={videoRef} className="videoBg" autoPlay loop muted playsInline>
         <source src={videoBg} type="video/mp4" />
       </video>
       <div className="container-sm">

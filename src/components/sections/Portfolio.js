@@ -145,6 +145,20 @@ const Portfolio = ({
   const [openP2, setOpenP2] = useState(false);
   const [openP3, setOpenP3] = useState(false);
   const modalOpen = useRef(false);
+  const fluxVideoRef = useRef(null);
+
+  useEffect(() => {
+    const video = fluxVideoRef.current;
+    if (!video) return;
+    // React sets `muted` as a DOM property, not a reflected attribute, so
+    // react-snap's prerendered HTML omits it and browsers block the
+    // unmuted autoplay attempt before hydration runs. Set the attribute
+    // explicitly so it's present in both the live DOM and the snapshot.
+    video.setAttribute("muted", "");
+    video.defaultMuted = true;
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
 
   const onOpenModalP1 = () => {
     setOpenP1(true);
@@ -209,7 +223,14 @@ const Portfolio = ({
             <div className="">
               {/* <div className=""> */}
               <Card className="caseStudyCard">
-                <video className="caseStudyImg" autoPlay loop muted playsInline>
+                <video
+                  ref={fluxVideoRef}
+                  className="caseStudyImg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
                   <source src={flux} type="video/mp4" />
                 </video>
                 <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">

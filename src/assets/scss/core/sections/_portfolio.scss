@@ -169,10 +169,10 @@
 
 .caseStudyTitle{
 	font-weight: bold;
-	font-size: 48px;
-	
+	font-size: 36px;
+
 	@include media('<medium') {
-			font-size: 36px;
+			font-size: 28px;
 			position: relative;
 			top: 10px;
 		}
