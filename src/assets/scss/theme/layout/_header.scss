@@ -1,6 +1,6 @@
 .site-header {
   position: fixed !important;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -15,7 +15,7 @@
 
 @media (max-width: 640px) {
   .header-nav-toggle + .header-nav {
-    background: rgba(0, 0, 0, 0.72) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
