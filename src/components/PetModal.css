@@ -212,7 +212,7 @@
 
 .pet-modal-faq > div {
   border-top: 1px solid #111;
-  padding: 14px 0;
+  padding: 22px 0;
 }
 
 .pet-modal-faq > div:last-child {
@@ -220,12 +220,12 @@
 }
 
 .pet-modal-faq dt {
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #eceded;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .pet-modal-faq dd {
@@ -242,12 +242,14 @@
 }
 
 .pet-modal-faq dd a,
+.pet-modal-text > p a,
 .pet-modal-list-btn {
   color: #eceded;
   text-decoration: none;
 }
 
 .pet-modal-faq dd a:hover,
+.pet-modal-text > p a:hover,
 .pet-modal-list-btn:hover {
   color: #fff;
 }

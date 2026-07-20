@@ -31,10 +31,18 @@ const PetModal = () => {
         </div>
         <div className="pet-modal-text">
           <p>
-            PET is a modular robotic companion, more sculpture than animal. PET
-            responds to touch: your grip, your strokes, the way you roll it in
-            your arms. It develops a feeling for you, and expresses it through
-            movement: cuddling, writhing, purring or more.
+            PET is an{" "}
+            <a
+              href="https://icsr2026.uk/awards/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <u>award-winning</u>
+            </a>{" "}
+            robotic companion, more sculpture than animal. PET responds to
+            touch: your grip, your strokes, the way you roll it in your arms. It
+            develops a feeling for you, and expresses it through movement:
+            cuddling, writhing, purring or more.
           </p>
           <dl className="pet-modal-faq">
             <div>
@@ -46,7 +54,8 @@ const PetModal = () => {
             <div>
               <dt>How does it know what you're doing?</dt>
               <dd>
-                Capacitive sensors + FSRs + MIT mode feedback from motors.
+                Capacitive sensors + FSRs + IMU + MIT mode feedback from bldc
+                motors.
               </dd>
             </div>
             <div>
@@ -57,11 +66,18 @@ const PetModal = () => {
               </dd>
             </div>
             <div>
-              <dt>Is PET for Sale?</dt>
+              <dt>Why modular design?</dt>
               <dd>
-                No, not at this time.{" "}
+                Like pixels, more modules increase PET's tactile and expressive
+                resolution.
+              </dd>
+            </div>
+            <div>
+              <dt>Is PET finished? Is it for Sale?</dt>
+              <dd>
+                I'm working on the next version. If you really want one,{" "}
                 <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
-                  <u>Reach out</u>
+                  <u>reach out</u>
                 </HashLink>{" "}
                 with inquiries.
               </dd>
@@ -74,28 +90,28 @@ const PetModal = () => {
                   speech, or gaze. PET takes a different approach. It is a
                   speculative robotic companion, more sculpture than animal,
                   designed to be held, handled, and physically engaged rather
-                  than observed at a distance. It responds to your strokes,
-                  your grip, the way you roll it in your arms; it develops a
-                  feeling for you and expresses it through movement — be it
-                  cuddling, writhing, or recoiling.
+                  than observed at a distance. It responds to your strokes, your
+                  grip, the way you roll it in your arms; it develops a feeling
+                  for you and expresses it through movement — be it cuddling,
+                  writhing, or recoiling.
                 </p>
                 <p>
                   By privileging touch, PET is freed from representational
-                  demands, and the aesthetic emerges from function. Its body
-                  is a chain of prismatic modules inspired by pixels; more
-                  modules raise PET's tactile resolution. The modules have
-                  smooth continuous surfaces, each covered in a variety of
-                  sensors, joined by compliant, proprioceptive motors. The
-                  body is optimized for being lifted, cradled, and
-                  repositioned in human arms.
+                  demands, and the aesthetic emerges from function. Its body is
+                  a chain of prismatic modules inspired by pixels; more modules
+                  raise PET's tactile resolution. The modules have smooth
+                  continuous surfaces, each covered in a variety of sensors,
+                  joined by compliant, proprioceptive motors. The body is
+                  optimized for being lifted, cradled, and repositioned in human
+                  arms.
                 </p>
                 <p>
                   PET's movement emerges from ongoing interaction. Sensor
                   signals are processed in real time and categorized into
                   gestures, encoded into valenced language (e.g. stroke vs.
-                  poke, cradle vs. restrict), then sent to an LLM that enacts
-                  a behaviour reflecting how it feels about the interaction.
-                  The result is a non-anthropomorphic social agent whose
+                  poke, cradle vs. restrict), then sent to an LLM that enacts a
+                  behaviour reflecting how it feels about the interaction. The
+                  result is a non-anthropomorphic social agent whose
                   expressiveness arises from how it feels to hold rather than
                   how it looks.
                 </p>
