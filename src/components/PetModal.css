@@ -62,8 +62,16 @@
   background: #c7c7c7;
 }
 
+.pet-modal-media {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  height: 360px;
+}
+
 .pet-modal-image {
-  aspect-ratio: 1340 / 687;
+  flex: 1 1 auto;
+  min-width: 0;
   overflow: hidden;
 }
 
@@ -73,6 +81,120 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.pet-modal-shorts {
+  position: relative;
+  flex: 0 0 auto;
+  aspect-ratio: 0.667;
+  overflow: hidden;
+  background: #000;
+}
+
+.pet-modal-shorts-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.pet-modal-shorts-slide-active {
+  display: block;
+}
+
+.pet-modal-shorts-slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-modal-shorts-prev,
+.pet-modal-shorts-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+  z-index: 1;
+}
+
+.pet-modal-shorts-prev {
+  left: 6px;
+}
+
+.pet-modal-shorts-next {
+  right: 6px;
+}
+
+.pet-modal-shorts-prev::before,
+.pet-modal-shorts-next::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #eceded;
+  border-bottom: 2px solid #eceded;
+}
+
+.pet-modal-shorts-prev::before {
+  transform: rotate(135deg) translate(-1px, -1px);
+}
+
+.pet-modal-shorts-next::before {
+  transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.pet-modal-shorts-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 1;
+}
+
+.pet-modal-shorts-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pet-modal-shorts-dot-active {
+  background: #eceded;
+}
+
+@media (max-width: 640px) {
+  .pet-modal-media {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .pet-modal-image {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 1340 / 687;
+  }
+
+  .pet-modal-shorts {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
 }
 
 .pet-modal-text {
@@ -109,6 +231,14 @@
 .pet-modal-faq dd {
   margin: 0;
   line-height: 1.7;
+}
+
+.pet-modal-faq dd p {
+  margin: 0;
+}
+
+.pet-modal-faq dd p + p {
+  margin-top: 1em;
 }
 
 .pet-modal-faq dd a,
