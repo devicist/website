@@ -75,11 +75,11 @@ const PetModal = () => {
             <div>
               <dt>Is PET finished? Is it for Sale?</dt>
               <dd>
-                I'm working on the next version. If you really want one,{" "}
+                I'm working on the next version. PET is not publicly available
+                at this time, but you are welcome to{" "}
                 <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
-                  <u>reach out</u>
+                  <u>reach out</u> with questions.
                 </HashLink>{" "}
-                with inquiries.
               </dd>
             </div>
             <div>
