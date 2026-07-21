@@ -28,6 +28,7 @@ const PetModal = () => {
             <img src="/pet_held.jpg" alt="PET robot being cradled in arms" />
           </div>
           <PetShortsCarousel />
+          <h2 className="pet-modal-title">PET</h2>
           <p className="pet-modal-intro">
             PET is a robotic companion, more sculpture than animal. PET responds
             to touch: your grip, your strokes, the way you roll it in your arms.

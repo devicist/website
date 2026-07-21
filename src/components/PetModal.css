@@ -65,12 +65,19 @@
 .pet-modal-body {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 360px auto auto;
+  grid-template-rows: 360px auto auto auto;
   grid-template-areas:
     "image shorts"
+    "title title"
     "intro intro"
     "faq faq";
   column-gap: 12px;
+}
+
+.pet-modal-title {
+  grid-area: title;
+  padding-left: 32px;
+  margin-bottom: 0;
 }
 
 .pet-modal-image {
@@ -184,7 +191,7 @@
 
 .pet-modal-intro {
   grid-area: intro;
-  padding: 48px 32px 0;
+  padding: 32px 32px 0;
   margin: 0;
   line-height: 1.75;
 }
@@ -333,8 +340,16 @@
     font-size: 0.875rem;
   }
 
+  .pet-modal-intro {
+    padding: 2px 32px 0;
+  }
+
   .pet-modal-faq dt {
     font-size: 0.9rem;
+  }
+
+  .pet-modal-title {
+    padding-left: 12px;
   }
 
   .pet-modal-intro {
@@ -349,9 +364,10 @@
 
   .pet-modal-body {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
       "shorts"
+      "title"
       "intro"
       "image"
       "faq";
