@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import Logo from "./partials/Logo";
 import FooterSocial from "./partials/FooterSocial";
 
 const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
@@ -19,8 +18,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
             topDivider && "has-top-divider"
           )}
         >
-          <div className="footer-top space-between text-xxs">
-            <Logo />
+          <div className="footer-top footer-top-centered text-xxs">
             <FooterSocial />
           </div>
         </div>

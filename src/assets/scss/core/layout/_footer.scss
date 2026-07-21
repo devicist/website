@@ -19,6 +19,11 @@
 
 .footer-top {
 	padding-bottom: $footer-inner--padding-v * 0.5;
+
+	&.footer-top-centered {
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .footer-bottom {

@@ -55,12 +55,12 @@ const OtherProjects = ({
 
   const gallery = {
     images: [
-      {
-        src: require("./../../assets/images/portfolio/more/more12.jpg"),
-        width: 2,
-        height: 1,
-        title: "Tactile Robot for Ontario Science Center",
-      },
+      // {
+      //   src: require("./../../assets/images/portfolio/more/more12.jpg"),
+      //   width: 2,
+      //   height: 1,
+      //   title: "Tactile Robot for Ontario Science Center",
+      // },
       {
         src: require("./../../assets/images/portfolio/more/more11.jpg"),
         width: 2,
@@ -111,7 +111,7 @@ const OtherProjects = ({
   };
 
   return (
-    <section id="work">
+    <section>
       <div className="container-sm reveal-from-bottom mt-16">
         {/* <h3 className="ta-c">More</h3> */}
         <div className=" container-sm cs-gridWrapper reveal-from-bottom">
