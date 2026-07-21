@@ -47,7 +47,7 @@ const PetModal = () => {
             <div>
               <dt>What's it for?</dt>
               <dd>
-                To explore comfort, intimacy and stimulation through touch.
+                To explore affect, intimacy and reciprocity through touch.
               </dd>
             </div>
             <div>
@@ -74,8 +74,8 @@ const PetModal = () => {
             <div>
               <dt>Is PET finished? Is it for Sale?</dt>
               <dd>
-                I'm working on the next version. PET is not publicly available
-                at this time, but you are welcome to{" "}
+                The next version is in development. PET is not available for
+                purchase at this time, but you are welcome to{" "}
                 <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
                   <u>reach out</u> with questions.
                 </HashLink>{" "}
