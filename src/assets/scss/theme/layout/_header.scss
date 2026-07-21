@@ -14,8 +14,12 @@
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
   .header-nav-toggle + .header-nav {
-    background: rgba(0, 0, 0, 0.45) !important;
+    background: rgba(0, 0, 0, 0.75) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
