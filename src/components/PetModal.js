@@ -110,8 +110,8 @@ const PetModal = () => {
                   poke, cradle vs. restrict), then sent to an LLM that enacts a
                   behaviour reflecting how it feels about the interaction. The
                   result is a non-anthropomorphic social agent whose
-                  expressiveness arises from how it feels to hold rather than
-                  how it looks.
+                  expressiveness arises from how it feels rather than how it
+                  looks.
                 </p>
               </dd>
             </div>
