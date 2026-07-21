@@ -40,7 +40,10 @@ const PetShortsCarousel = () => {
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <video
-            ref={(el) => (videoRefs.current[index] = el)}
+            ref={(el) => {
+              videoRefs.current[index] = el;
+              if (el) el.muted = true;
+            }}
             src={src}
             muted
             loop
