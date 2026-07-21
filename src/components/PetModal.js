@@ -23,26 +23,24 @@ const PetModal = () => {
           onClick={() => setIsOpen(false)}
           aria-label="Close"
         />
-        <div className="pet-modal-media">
+        <div className="pet-modal-body">
           <div className="pet-modal-image">
             <img src="/pet_held.jpg" alt="PET robot being cradled in arms" />
           </div>
           <PetShortsCarousel />
-        </div>
-        <div className="pet-modal-text">
-          <p>
-            PET is an{" "}
+          <p className="pet-modal-intro">
+            PET is a robotic companion, more sculpture than animal. PET responds
+            to touch: your grip, your strokes, the way you roll it in your arms.
+            It develops a feeling for you, and expresses it through movement:
+            cuddling, writhing, purring or more. PET was awarded{" "}
             <a
               href="https://icsr2026.uk/awards/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <u>award-winning</u>
+              <u>Best Art and Design</u>
             </a>{" "}
-            robotic companion, more sculpture than animal. PET responds to
-            touch: your grip, your strokes, the way you roll it in your arms. It
-            develops a feeling for you, and expresses it through movement:
-            cuddling, writhing, purring or more.
+            at ICSR 2026.
           </p>
           <dl className="pet-modal-faq">
             <div>
@@ -61,8 +59,8 @@ const PetModal = () => {
             <div>
               <dt>What's controlling the movement?</dt>
               <dd>
-                A large LLM interprets touch gestures through an emotional lens
-                and enacts behavioral responses.
+                An LLM interprets touch gestures through an emotional lens and
+                enacts behavioral responses.
               </dd>
             </div>
             <div>

@@ -45,7 +45,7 @@ const PetShortsCarousel = () => {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload={index === activeIndex ? "auto" : "metadata"}
             controls={hoveredIndex === index}
             style={index === 2 ? { objectPosition: "left" } : undefined}
           />

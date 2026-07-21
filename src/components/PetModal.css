@@ -62,15 +62,19 @@
   background: #c7c7c7;
 }
 
-.pet-modal-media {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-  height: 360px;
+.pet-modal-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 360px auto auto;
+  grid-template-areas:
+    "image shorts"
+    "intro intro"
+    "faq faq";
+  column-gap: 12px;
 }
 
 .pet-modal-image {
-  flex: 1 1 auto;
+  grid-area: image;
   min-width: 0;
   overflow: hidden;
 }
@@ -84,8 +88,8 @@
 }
 
 .pet-modal-shorts {
+  grid-area: shorts;
   position: relative;
-  flex: 0 0 auto;
   aspect-ratio: 0.667;
   overflow: hidden;
   background: #000;
@@ -178,35 +182,16 @@
   background: #eceded;
 }
 
-@media (max-width: 640px) {
-  .pet-modal-media {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .pet-modal-image {
-    flex: 0 0 auto;
-    width: 100%;
-    aspect-ratio: 1340 / 687;
-  }
-
-  .pet-modal-shorts {
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-
-.pet-modal-text {
-  padding: 48px 32px 64px;
-}
-
-.pet-modal-text > p {
+.pet-modal-intro {
+  grid-area: intro;
+  padding: 48px 32px 0;
   margin: 0;
   line-height: 1.75;
 }
 
 .pet-modal-faq {
+  grid-area: faq;
+  padding: 0 32px 64px;
   margin: 32px 0 0;
 }
 
@@ -242,14 +227,14 @@
 }
 
 .pet-modal-faq dd a,
-.pet-modal-text > p a,
+.pet-modal-intro a,
 .pet-modal-list-btn {
   color: #eceded;
   text-decoration: none;
 }
 
 .pet-modal-faq dd a:hover,
-.pet-modal-text > p a:hover,
+.pet-modal-intro a:hover,
 .pet-modal-list-btn:hover {
   color: #fff;
 }
@@ -341,4 +326,45 @@
   display: inline-flex;
   color: #eceded;
   padding: 12px 32px;
+}
+
+@media (max-width: 640px) {
+  .pet-modal {
+    font-size: 0.875rem;
+  }
+
+  .pet-modal-faq dt {
+    font-size: 0.9rem;
+  }
+
+  .pet-modal-intro {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pet-modal-faq {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pet-modal-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "shorts"
+      "intro"
+      "image"
+      "faq";
+  }
+
+  .pet-modal-image {
+    width: 100%;
+    aspect-ratio: 1340 / 687;
+    margin-top: 32px;
+  }
+
+  .pet-modal-shorts {
+    width: 100%;
+    margin: 0;
+  }
 }
