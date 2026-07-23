@@ -65,13 +65,14 @@
 .pet-modal-body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 360px auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "image"
     "title"
     "intro"
     "shorts"
-    "faq";
+    "faq"
+    "concept";
 }
 
 .pet-modal-title {
@@ -84,13 +85,14 @@
   grid-area: image;
   min-width: 0;
   overflow: hidden;
+  aspect-ratio: 4096 / 2096;
 }
 
 .pet-modal-image img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
 }
 
@@ -191,6 +193,114 @@
   background: #eceded;
 }
 
+.pet-modal-conference-wrap {
+  width: 240px;
+  margin: 0 auto 22px;
+}
+
+.pet-modal-conference {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 0.75;
+  overflow: hidden;
+  background: #000;
+}
+
+.pet-modal-conference-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
+}
+
+.pet-modal-conference-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.pet-modal-conference-slide-active {
+  display: block;
+}
+
+.pet-modal-conference-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-modal-conference-prev,
+.pet-modal-conference-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+  z-index: 1;
+}
+
+.pet-modal-conference-prev {
+  left: 6px;
+}
+
+.pet-modal-conference-next {
+  right: 6px;
+}
+
+.pet-modal-conference-prev::before,
+.pet-modal-conference-next::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #eceded;
+  border-bottom: 2px solid #eceded;
+}
+
+.pet-modal-conference-prev::before {
+  transform: rotate(135deg) translate(-1px, -1px);
+}
+
+.pet-modal-conference-next::before {
+  transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.pet-modal-conference-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 1;
+}
+
+.pet-modal-conference-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pet-modal-conference-dot-active {
+  background: #eceded;
+}
+
 .pet-modal-intro {
   grid-area: intro;
   padding: 32px 32px 0;
@@ -256,6 +366,24 @@
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+}
+
+.pet-modal-concept {
+  grid-area: concept;
+  padding: 0 32px 64px;
+}
+
+.pet-modal-concept img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pet-modal-concept-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
 }
 
 .mc-signup-form {
@@ -364,15 +492,21 @@
     padding-right: 12px;
   }
 
+  .pet-modal-concept {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .pet-modal-body {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
       "shorts"
       "title"
       "intro"
       "image"
-      "faq";
+      "faq"
+      "concept";
   }
 
   .pet-modal-image {

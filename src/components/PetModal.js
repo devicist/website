@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import MailchimpSignup from "./MailchimpSignup";
 import PetShortsCarousel from "./PetShortsCarousel";
+import PetConferenceCarousel from "./PetConferenceCarousel";
 import petCradledNewLarge from "./../assets/images/portfolio/pet/cradled.jpg";
+import petConceptMedium from "./../assets/images/portfolio/pet/concept-medium.jpg";
 import "./PetModal.css";
 
 const PetModal = () => {
@@ -86,6 +88,7 @@ const PetModal = () => {
               </dd>
             </div>
             <div>
+              <PetConferenceCarousel />
               <dt>More Information</dt>
               <dd>
                 <p>
@@ -131,6 +134,10 @@ const PetModal = () => {
               </dd>
             </div>
           </dl>
+          <div className="pet-modal-concept">
+            <img src={petConceptMedium} alt="PET installation concept" />
+            <p className="pet-modal-concept-caption">Installation concept</p>
+          </div>
         </div>
       </div>
     </div>
