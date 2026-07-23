@@ -64,14 +64,14 @@
 
 .pet-modal-body {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 360px auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 360px auto auto auto auto;
   grid-template-areas:
-    "image shorts"
-    "title title"
-    "intro intro"
-    "faq faq";
-  column-gap: 12px;
+    "image"
+    "title"
+    "intro"
+    "shorts"
+    "faq";
 }
 
 .pet-modal-title {
@@ -96,6 +96,8 @@
 
 .pet-modal-shorts {
   grid-area: shorts;
+  width: 240px;
+  margin: 32px auto 0;
   position: relative;
   aspect-ratio: 0.667;
   overflow: hidden;

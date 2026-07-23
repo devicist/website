@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import MailchimpSignup from "./MailchimpSignup";
 import PetShortsCarousel from "./PetShortsCarousel";
+import petCradledNewLarge from "./../assets/images/portfolio/pet/cradled.jpg";
 import "./PetModal.css";
 
 const PetModal = () => {
@@ -25,7 +26,10 @@ const PetModal = () => {
         />
         <div className="pet-modal-body">
           <div className="pet-modal-image">
-            <img src="/pet_held.jpg" alt="PET robot being cradled in arms" />
+            <img
+              src={petCradledNewLarge}
+              alt="PET robot being cradled in arms"
+            />
           </div>
           <PetShortsCarousel />
           <h2 className="pet-modal-title">PET</h2>
@@ -113,6 +117,16 @@ const PetModal = () => {
                   result is a non-anthropomorphic social agent whose
                   expressiveness arises from how it feels rather than how it
                   looks.
+                </p>{" "}
+                <p>
+                  PET is in active development. Multiple versions are in the
+                  planning stage including: a collectible version, a human-sized
+                  version for performance, and one that is room-scale for
+                  installation. If you are interested in collaborating, please{" "}
+                  <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
+                    <u>reach out</u>
+                  </HashLink>
+                  .
                 </p>
               </dd>
             </div>
