@@ -142,6 +142,10 @@ const Portfolio = ({
     // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
   };
 
+  const subHeader = {
+    title: "Commercial Work",
+  };
+
   const [openP1, setOpenP1] = useState(false);
   const [openP2, setOpenP2] = useState(false);
   const [openP3, setOpenP3] = useState(false);
@@ -235,7 +239,7 @@ const Portfolio = ({
           </button>
 
           <Link to="/flux">
-            <div className="mt-64">
+            <div className="mt-64 caseStudyWrapper">
               <Card className="caseStudyCard">
                 <video
                   ref={fluxVideoRef}
@@ -271,10 +275,10 @@ const Portfolio = ({
             </div>
           </Link>
 
-          {/* <SectionHeader
+          <SectionHeader
             data={subHeader}
             className="center-content pb-0 mt-64"
-          /> */}
+          />
           <div className="mt-64">
             <div className={tilesClasses}>
               <div className="reveal-from-bottom projectGrid">
