@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "../elements/Button";
 import flux from "./../../assets/images/portfolio/fluxCoverNew.mp4";
+import petCradled from "./../../assets/images/portfolio/pet/cradled.jpg";
 // import wheel from "../../assets/images/portfolio/braking/brakingCsCover.png";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
@@ -219,9 +220,22 @@ const Portfolio = ({
           {/*this is a seperate .js file found in sections > partials*/}
           <SectionHeader data={sectionHeader} className="center-content mt-0" />
 
+          <button
+            className="projectButton border-0 d-block w-100"
+            onClick={() => window.dispatchEvent(new Event("openPetModal"))}
+          >
+            <Card className="caseStudyCard">
+              <Card.Img className="caseStudyImg" src={petCradled} />
+              <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
+                <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
+                  PET
+                </Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+          </button>
+
           <Link to="/flux">
-            <div className="">
-              {/* <div className=""> */}
+            <div className="mt-64">
               <Card className="caseStudyCard">
                 <video
                   ref={fluxVideoRef}

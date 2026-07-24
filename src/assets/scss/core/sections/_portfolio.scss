@@ -130,7 +130,8 @@
 
 .projectButton{
 	background-color: transparent;
-	
+	text-align: left;
+
 	cursor: pointer;
 }
 
@@ -151,6 +152,9 @@
 	@include media('<medium') {
 			height: 100%;
 			object-position: -300px;
+		}
+	@include media('>=medium') {
+			aspect-ratio: 16 / 9;
 		}
 }
 .caseStudyImgGradient{
