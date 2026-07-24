@@ -138,6 +138,10 @@
 .caseStudyWrapper{
 	background-color: black;
 }
+
+.caseStudyLink + .section-header {
+	margin-top: 96px;
+}
 .caseStudyCard{
 	border: none !important;
 	background-color: black;

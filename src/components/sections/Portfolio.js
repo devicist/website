@@ -231,14 +231,14 @@ const Portfolio = ({
             <Card className="caseStudyCard">
               <Card.Img className="caseStudyImg" src={petCradled} />
               <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
-                <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
+                {/* <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
                   PET
-                </Card.Title>
+                </Card.Title> */}
               </Card.ImgOverlay>
             </Card>
           </button>
 
-          <Link to="/flux">
+          <Link to="/flux" className="caseStudyLink">
             <div className="mt-64 caseStudyWrapper">
               <Card className="caseStudyCard">
                 <video
@@ -252,9 +252,9 @@ const Portfolio = ({
                   <source src={flux} type="video/mp4" />
                 </video>
                 <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
-                  <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
+                  {/* <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
                     Flux
-                  </Card.Title>
+                  </Card.Title> */}
                   <Card.Text className="caseStudyText has-text-shadow">
                     {/* A large-scale kinetic installation for the office café. */}
                     {/* 40 metalic prisms
