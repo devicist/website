@@ -222,7 +222,11 @@ const Portfolio = ({
       <div className={innerClasses}>
         <div className="container reveal-from-bottom mt-32">
           {/*this is a seperate .js file found in sections > partials*/}
-          <SectionHeader data={sectionHeader} className="center-content mt-0" />
+          <SectionHeader
+            data={sectionHeader}
+            id="featured"
+            className="center-content mt-0"
+          />
 
           <button
             className="projectButton border-0 d-block w-100"
@@ -275,7 +279,11 @@ const Portfolio = ({
             </div>
           </Link>
 
-          <SectionHeader data={subHeader} className="center-content" />
+          <SectionHeader
+            data={subHeader}
+            id="commercial"
+            className="center-content"
+          />
           <div className={tilesClasses}>
             <div className="reveal-from-bottom projectGrid">
               <button

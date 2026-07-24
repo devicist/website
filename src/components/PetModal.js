@@ -9,7 +9,7 @@ import petConceptMedium from "./../assets/images/portfolio/pet/concept-medium.jp
 import "./PetModal.css";
 
 const PetModal = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const history = useHistory();
 
