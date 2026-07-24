@@ -147,42 +147,25 @@
 	background-color: black;
 	width: 100%;
 	overflow: hidden;
-
-	@include media('<medium') {
-			height: 400px;
-
-		}
 }
 
 .caseStudyImg{
 	display: block;
 	object-fit: cover;
 	width: 100%;
+	aspect-ratio: 16 / 9;
 	// Non-integer display scaling can leave a hairline artifact at the
 	// video's decoded edge; scale it up slightly so overflow:hidden on
 	// .caseStudyCard clips the artifact off.
 	transform: scale(1.02);
 	transform-origin: center;
-	@include media('<medium') {
-			height: 100%;
-			object-position: -300px;
-		}
-	@include media('>=medium') {
-			aspect-ratio: 16 / 9;
-		}
 }
 .caseStudyImgGradient{
-	display: block;
-	position: relative;
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgb(0, 0, 0) 100%);
-	margin-top: -300px;
-	height: 300px;
-	@include media('<medium') {
-		margin-top: -250px;
-		height: 250px;
-	}
-	width: 100%;
-	content: '';
+	// Gradient stops are percentages of the overlay's own height (which
+	// spans the full image via .card-img-overlay's absolute inset:0), so
+	// the shaded portion stays proportional to the image at every size
+	// instead of eating a fixed pixel amount off a short mobile image.
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%);
 }
 
 .caseStudyTitle{
