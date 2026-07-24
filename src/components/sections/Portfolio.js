@@ -138,12 +138,12 @@ const Portfolio = ({
 
   //edit section header content here
   const sectionHeader = {
-    title: "Featured Projects",
+    title: "Featured",
     // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
   };
 
   const subHeader = {
-    title: "Commercial Work",
+    title: "Commercial",
   };
 
   const [openP1, setOpenP1] = useState(false);
