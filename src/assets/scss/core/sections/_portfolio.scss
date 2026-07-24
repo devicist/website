@@ -124,14 +124,16 @@
 	// their line box (vertical-align: baseline leaves room for descenders).
 	vertical-align: top;
 	width: 25%;
-	margin-top: 30px;
-
-	&:first-child {
-		margin-top: 0;
-	}
 
 	@include media('<medium') {
 		width: 70%;
+		// Below `medium` each tile is full-row and stacks, so only here do
+		// tiles need a top gap between rows (and the first tile none).
+		margin-top: 30px;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 
