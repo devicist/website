@@ -135,20 +135,30 @@
 	cursor: pointer;
 }
 
+.caseStudyWrapper{
+	background-color: black;
+}
 .caseStudyCard{
 	border: none !important;
 	background-color: black;
 	width: 100%;
-	
+	overflow: hidden;
+
 	@include media('<medium') {
 			height: 400px;
-			
+
 		}
 }
 
 .caseStudyImg{
+	display: block;
 	object-fit: cover;
 	width: 100%;
+	// Non-integer display scaling can leave a hairline artifact at the
+	// video's decoded edge; scale it up slightly so overflow:hidden on
+	// .caseStudyCard clips the artifact off.
+	transform: scale(1.02);
+	transform-origin: center;
 	@include media('<medium') {
 			height: 100%;
 			object-position: -300px;
