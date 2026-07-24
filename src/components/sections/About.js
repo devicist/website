@@ -49,7 +49,7 @@ const About = ({
 
   return (
     <section className={outerClasses} id="about">
-      <div className="container mt-64">
+      <div className="container mt-32">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className="about">

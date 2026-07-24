@@ -1,8 +1,9 @@
 @include media( '<=medium' ) {
     .portrait {
         width: 70%;
-        clear: both;    
-    }    
+        clear: both;
+        margin-bottom: 32px;
+    }
     .center-content {
         display: block;
         margin-left: auto;

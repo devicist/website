@@ -120,9 +120,16 @@
 }
 .projectGrid{
 	display: inline-block;
+	// Avoids the phantom whitespace inline-block elements otherwise get from
+	// their line box (vertical-align: baseline leaves room for descenders).
+	vertical-align: top;
 	width: 25%;
 	margin-top: 30px;
-	
+
+	&:first-child {
+		margin-top: 0;
+	}
+
 	@include media('<medium') {
 		width: 70%;
 	}
@@ -140,7 +147,12 @@
 }
 
 .caseStudyLink + .section-header {
-	margin-top: 96px;
+	// Matches the hero-to-"Featured" gap: section padding-top (48px/80px) + 32px.
+	margin-top: 80px;
+
+	@include media('>medium') {
+		margin-top: 112px;
+	}
 }
 .caseStudyCard{
 	border: none !important;

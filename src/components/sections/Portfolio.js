@@ -38,7 +38,7 @@ const Portfolio = ({
   );
 
   const tilesClasses = classNames(
-    "center-content mt-16 container",
+    "center-content container",
     pushLeft && "push-left",
   );
 
@@ -275,119 +275,114 @@ const Portfolio = ({
             </div>
           </Link>
 
-          <SectionHeader
-            data={subHeader}
-            className="center-content pb-0 mt-64"
-          />
-          <div className="mt-64">
-            <div className={tilesClasses}>
-              <div className="reveal-from-bottom projectGrid">
-                <button
-                  className="projectButton border-0"
-                  onClick={onOpenModalP3}
-                >
-                  <Card className="bg-black projectCard">
-                    <Card.Img
-                      // className="tintMinor"
-                      src={require("./../../assets/images/portfolio/brain/brainFeature.jpg")}
-                    />
-                    <Card.ImgOverlay>
-                      <Card.Body>
-                        {/* <Card.Title className="projectTitle">
+          <SectionHeader data={subHeader} className="center-content" />
+          <div className={tilesClasses}>
+            <div className="reveal-from-bottom projectGrid">
+              <button
+                className="projectButton border-0"
+                onClick={onOpenModalP3}
+              >
+                <Card className="bg-black projectCard">
+                  <Card.Img
+                    // className="tintMinor"
+                    src={require("./../../assets/images/portfolio/brain/brainFeature.jpg")}
+                  />
+                  <Card.ImgOverlay>
+                    <Card.Body>
+                      {/* <Card.Title className="projectTitle">
                           Dassault
                         </Card.Title> */}
-                      </Card.Body>
-                    </Card.ImgOverlay>
-                  </Card>
-                </button>
-              </div>
+                    </Card.Body>
+                  </Card.ImgOverlay>
+                </Card>
+              </button>
+            </div>
 
-              <div className="reveal-from-left projectGrid">
-                <button
-                  className="projectButton border-0"
-                  onClick={onOpenModalP2}
-                >
-                  <Card className="bg-black projectCard ">
-                    <Card.Img
-                      className="tintMajor"
-                      src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
-                    />
-                    <Card.ImgOverlay>
-                      {/* <Card.Body>
+            <div className="reveal-from-left projectGrid">
+              <button
+                className="projectButton border-0"
+                onClick={onOpenModalP2}
+              >
+                <Card className="bg-black projectCard ">
+                  <Card.Img
+                    className="tintMajor"
+                    src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
+                  />
+                  <Card.ImgOverlay>
+                    {/* <Card.Body>
                         <Card.Title className="projectTitle">KIA</Card.Title>
                       </Card.Body> */}
-                    </Card.ImgOverlay>
-                  </Card>
-                </button>
-              </div>
+                  </Card.ImgOverlay>
+                </Card>
+              </button>
+            </div>
 
-              <div className="reveal-from-right projectGrid">
-                <button
-                  className="projectButton border-0"
-                  onClick={onOpenModalP1}
-                >
-                  <Card className="bg-black projectCard">
-                    <Card.Img
-                      className="tintMinor"
-                      src={require("./../../assets/images/portfolio/Snowflake/snowflakeNewCover.png")}
-                    />
-                    <Card.ImgOverlay className=" d-flex flex-column">
-                      <Card.Body>
-                        {/* <Card.Title className="projectTitle">
+            <div className="reveal-from-right projectGrid">
+              <button
+                className="projectButton border-0"
+                onClick={onOpenModalP1}
+              >
+                <Card className="bg-black projectCard">
+                  <Card.Img
+                    className="tintMinor"
+                    src={require("./../../assets/images/portfolio/Snowflake/snowflakeNewCover.png")}
+                  />
+                  <Card.ImgOverlay className=" d-flex flex-column">
+                    <Card.Body>
+                      {/* <Card.Title className="projectTitle">
                           BCE Place
                         </Card.Title> */}
-                      </Card.Body>
-                    </Card.ImgOverlay>
-                  </Card>
-                </button>
-              </div>
-
-              <Modal
-                open={openP1}
-                onClose={onCloseModal}
-                center
-                closeIcon={closeIcon}
-                classNames={{
-                  modal: "projectModal",
-                  overlay: "projectOverlay",
-                  // modalAnimationIn: "customEnterModalAnimation",
-                  // modalAnimationOut: "customLeaveModalAnimation",
-                }}
-                animationDuration={800}
-              >
-                <ProjectModal {...Project1ModalContent} />
-              </Modal>
-              <Modal
-                open={openP2}
-                onClose={onCloseModal}
-                center
-                closeIcon={closeIcon}
-                classNames={{
-                  modal: "projectModal",
-                  overlay: "projectOverlay",
-                  // modalAnimationIn: "customEnterModalAnimation",
-                  //modalAnimationOut: "customLeaveModalAnimation",
-                }}
-                animationDuration={800}
-              >
-                <ProjectModal {...Project2ModalContent} />
-              </Modal>
-              <Modal
-                open={openP3}
-                onClose={onCloseModal}
-                center
-                closeIcon={closeIcon}
-                classNames={{
-                  modal: "projectModal",
-                  overlay: "projectOverlay",
-                  //modalAnimationIn: "customEnterModalAnimation",
-                  //modalAnimationOut: "customLeaveModalAnimation",
-                }}
-                animationDuration={800}
-              >
-                <ProjectModal {...Project3ModalContent} />
-              </Modal>
+                    </Card.Body>
+                  </Card.ImgOverlay>
+                </Card>
+              </button>
             </div>
+
+            <Modal
+              open={openP1}
+              onClose={onCloseModal}
+              center
+              closeIcon={closeIcon}
+              classNames={{
+                modal: "projectModal",
+                overlay: "projectOverlay",
+                // modalAnimationIn: "customEnterModalAnimation",
+                // modalAnimationOut: "customLeaveModalAnimation",
+              }}
+              animationDuration={800}
+            >
+              <ProjectModal {...Project1ModalContent} />
+            </Modal>
+            <Modal
+              open={openP2}
+              onClose={onCloseModal}
+              center
+              closeIcon={closeIcon}
+              classNames={{
+                modal: "projectModal",
+                overlay: "projectOverlay",
+                // modalAnimationIn: "customEnterModalAnimation",
+                //modalAnimationOut: "customLeaveModalAnimation",
+              }}
+              animationDuration={800}
+            >
+              <ProjectModal {...Project2ModalContent} />
+            </Modal>
+            <Modal
+              open={openP3}
+              onClose={onCloseModal}
+              center
+              closeIcon={closeIcon}
+              classNames={{
+                modal: "projectModal",
+                overlay: "projectOverlay",
+                //modalAnimationIn: "customEnterModalAnimation",
+                //modalAnimationOut: "customLeaveModalAnimation",
+              }}
+              animationDuration={800}
+            >
+              <ProjectModal {...Project3ModalContent} />
+            </Modal>
           </div>
         </div>
       </div>
