@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import MailchimpSignup from "./MailchimpSignup";
 import PetShortsCarousel from "./PetShortsCarousel";
@@ -9,12 +10,33 @@ import "./PetModal.css";
 
 const PetModal = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     const open = () => setIsOpen(true);
     window.addEventListener("openPetModal", open);
     return () => window.removeEventListener("openPetModal", open);
   }, []);
+
+  // Deep-link support: opening a URL that already carries #pet should open the modal.
+  useEffect(() => {
+    if (location.hash === "#pet") {
+      setIsOpen(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.hash]);
+
+  // Keep the URL hash in sync so the modal has its own shareable link.
+  useEffect(() => {
+    const hasPetHash = location.hash === "#pet";
+    if (isOpen && !hasPetHash) {
+      history.replace({ ...location, hash: "#pet" });
+    } else if (!isOpen && hasPetHash) {
+      history.replace({ ...location, hash: "" });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -39,7 +61,7 @@ const PetModal = () => {
             PET is a robotic companion, more sculpture than animal. PET responds
             to touch: your grip, your strokes, the way you roll it in your arms.
             It develops a feeling for you, and expresses it through movement:
-            cuddling, writhing, purring or more. PET was awarded{" "}
+            cuddling, writhing, curling, recoiling. PET was awarded{" "}
             <a
               href="https://icsr2026.uk/awards/"
               target="_blank"
@@ -83,7 +105,7 @@ const PetModal = () => {
                 The next version is in development. PET is not available for
                 purchase at this time, but you are welcome to{" "}
                 <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
-                  <u>reach out</u> with questions.
+                  <u>inquire</u>.
                 </HashLink>{" "}
               </dd>
             </div>
@@ -116,16 +138,16 @@ const PetModal = () => {
                   signals are processed in real time and categorized into
                   gestures, encoded into valenced language (e.g. stroke vs.
                   poke, cradle vs. restrict), then sent to an LLM that enacts a
-                  behaviour reflecting how it feels about the interaction. The
-                  result is a non-anthropomorphic social agent whose
-                  expressiveness arises from how it feels rather than how it
-                  looks.
+                  behaviour reflecting how it feels about the ongoing
+                  interaction. The result is a non-anthropomorphic social agent
+                  whose expressiveness arises from how it feels rather than how
+                  it looks.
                 </p>{" "}
                 <p>
-                  PET is in active development. Multiple versions are in the
-                  planning stage including: a collectible version, a human-sized
-                  version for performance, and one that is room-scale for
-                  installation. If you are interested in collaborating, please{" "}
+                  PET is in active development. Multiple versions are in
+                  development: a collectible, a human-sized version for
+                  performance, and one that is room-scale for installation. If
+                  you are interested in collaborating, please{" "}
                   <HashLink to="/#contact" onClick={() => setIsOpen(false)}>
                     <u>reach out</u>
                   </HashLink>
