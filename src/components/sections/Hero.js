@@ -58,12 +58,12 @@ const Hero = ({
       <div className="container-sm">
         <div className={innerClasses}>
           <div style={{ padding: 30 }}>
-            <Image
+            {/* <Image
               src={require("./../../assets/images/logo.svg")}
               alt="Open"
               width={200}
               height={32}
-            />
+            /> */}
           </div>
 
           <div className="hero-content has-text-shadow">
@@ -72,12 +72,11 @@ const Hero = ({
                 className="m-0 mb-32 reveal-from-bottom h4-mobile"
                 data-reveal-delay="400"
               >
+                <span className="text-block">Devicist builds machines</span>{" "}
                 <span className="text-block">
-                  Devicist builds machines that feel alive,
+                  that feel strangely alive through
                 </span>
-                <span className="text-block">
-                  through movement, touch and presence.{" "}
-                </span>
+                <span className="text-block">movement, touch and presence</span>
               </p>
 
               <div className="reveal-from-bottom" data-reveal-delay="600"></div>
