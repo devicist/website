@@ -20,6 +20,12 @@
     "concept";
 }
 
+@media (min-width: 641px) {
+  .pet-page-inner {
+    padding-top: 32px;
+  }
+}
+
 .pet-page-title {
   grid-area: title;
   padding-left: 32px;
@@ -325,7 +331,7 @@
   }
 
   .pet-page-intro {
-    padding: 2px 12px 0;
+    padding: 24px 12px 0;
   }
 
   .pet-page-faq dt {
