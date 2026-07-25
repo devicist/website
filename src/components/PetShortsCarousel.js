@@ -27,13 +27,13 @@ const PetShortsCarousel = () => {
   };
 
   return (
-    <div className="pet-modal-shorts">
+    <div className="pet-page-shorts">
       {SHORTS.map((src, index) => (
         <div
           className={
             index === activeIndex
-              ? "pet-modal-shorts-slide pet-modal-shorts-slide-active"
-              : "pet-modal-shorts-slide"
+              ? "pet-page-shorts-slide pet-page-shorts-slide-active"
+              : "pet-page-shorts-slide"
           }
           key={src}
           onMouseEnter={() => setHoveredIndex(index)}
@@ -56,24 +56,24 @@ const PetShortsCarousel = () => {
       ))}
 
       <button
-        className="pet-modal-shorts-prev"
+        className="pet-page-shorts-prev"
         onClick={() => goTo(activeIndex - 1)}
         aria-label="Previous short"
       />
       <button
-        className="pet-modal-shorts-next"
+        className="pet-page-shorts-next"
         onClick={() => goTo(activeIndex + 1)}
         aria-label="Next short"
       />
 
-      <div className="pet-modal-shorts-dots">
+      <div className="pet-page-shorts-dots">
         {SHORTS.map((src, index) => (
           <button
             key={src}
             className={
               index === activeIndex
-                ? "pet-modal-shorts-dot pet-modal-shorts-dot-active"
-                : "pet-modal-shorts-dot"
+                ? "pet-page-shorts-dot pet-page-shorts-dot-active"
+                : "pet-page-shorts-dot"
             }
             onClick={() => goTo(index)}
             aria-label={`Show short ${index + 1}`}

@@ -228,10 +228,7 @@ const Portfolio = ({
             className="center-content mt-0"
           />
 
-          <button
-            className="projectButton border-0 d-block w-100"
-            onClick={() => window.dispatchEvent(new Event("openPetModal"))}
-          >
+          <Link to="/pet" className="projectButton d-block w-100">
             <Card className="caseStudyCard">
               <Card.Img className="caseStudyImg" src={petCradled} />
               <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
@@ -240,7 +237,7 @@ const Portfolio = ({
                 </Card.Title> */}
               </Card.ImgOverlay>
             </Card>
-          </button>
+          </Link>
 
           <Link to="/flux" className="caseStudyLink">
             <div className="mt-64 caseStudyWrapper">

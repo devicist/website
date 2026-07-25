@@ -1,0 +1,371 @@
+.pet-page {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #c7c7c7;
+}
+
+.pet-page-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    "image"
+    "title"
+    "intro"
+    "shorts"
+    "faq"
+    "concept";
+}
+
+.pet-page-title {
+  grid-area: title;
+  padding-left: 32px;
+  margin-bottom: 0;
+}
+
+.pet-page-image {
+  grid-area: image;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4096 / 2096;
+}
+
+.pet-page-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+
+.pet-page-shorts {
+  grid-area: shorts;
+  width: 240px;
+  margin: 32px auto 0;
+  position: relative;
+  aspect-ratio: 0.667;
+  overflow: hidden;
+  background: #000;
+}
+
+.pet-page-shorts-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.pet-page-shorts-slide-active {
+  display: block;
+}
+
+.pet-page-shorts-slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-page-shorts-prev,
+.pet-page-shorts-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+  z-index: 1;
+}
+
+.pet-page-shorts-prev {
+  left: 6px;
+}
+
+.pet-page-shorts-next {
+  right: 6px;
+}
+
+.pet-page-shorts-prev::before,
+.pet-page-shorts-next::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #eceded;
+  border-bottom: 2px solid #eceded;
+}
+
+.pet-page-shorts-prev::before {
+  transform: rotate(135deg) translate(-1px, -1px);
+}
+
+.pet-page-shorts-next::before {
+  transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.pet-page-shorts-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 1;
+}
+
+.pet-page-shorts-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pet-page-shorts-dot-active {
+  background: #eceded;
+}
+
+.pet-page-conference-wrap {
+  width: 240px;
+  margin: 0 auto 22px;
+}
+
+.pet-page-conference {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 0.75;
+  overflow: hidden;
+  background: #000;
+}
+
+.pet-page-conference-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
+}
+
+.pet-page-conference-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.pet-page-conference-slide-active {
+  display: block;
+}
+
+.pet-page-conference-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-page-conference-prev,
+.pet-page-conference-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+  z-index: 1;
+}
+
+.pet-page-conference-prev {
+  left: 6px;
+}
+
+.pet-page-conference-next {
+  right: 6px;
+}
+
+.pet-page-conference-prev::before,
+.pet-page-conference-next::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #eceded;
+  border-bottom: 2px solid #eceded;
+}
+
+.pet-page-conference-prev::before {
+  transform: rotate(135deg) translate(-1px, -1px);
+}
+
+.pet-page-conference-next::before {
+  transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.pet-page-conference-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 1;
+}
+
+.pet-page-conference-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pet-page-conference-dot-active {
+  background: #eceded;
+}
+
+.pet-page-intro {
+  grid-area: intro;
+  padding: 32px 32px 0;
+  margin: 0;
+  line-height: 1.75;
+}
+
+.pet-page-faq {
+  grid-area: faq;
+  padding: 0 32px 64px;
+  margin: 32px 0 0;
+}
+
+.pet-page-faq > div {
+  border-top: 1px solid #111;
+  padding: 22px 0;
+}
+
+.pet-page-faq > div:last-child {
+  border-bottom: 1px solid #111;
+}
+
+.pet-page-faq dt {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eceded;
+  margin-bottom: 10px;
+}
+
+.pet-page-faq dd {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.pet-page-faq dd p {
+  margin: 0;
+}
+
+.pet-page-faq dd p + p {
+  margin-top: 1em;
+}
+
+.pet-page-faq dd a,
+.pet-page-intro a {
+  color: #eceded;
+  text-decoration: none;
+}
+
+.pet-page-faq dd a:hover,
+.pet-page-intro a:hover {
+  color: #fff;
+}
+
+.pet-page-concept {
+  grid-area: concept;
+  padding: 0 32px 64px;
+}
+
+.pet-page-concept img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pet-page-concept-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .pet-page {
+    font-size: 0.875rem;
+  }
+
+  .pet-page-intro {
+    padding: 2px 12px 0;
+  }
+
+  .pet-page-faq dt {
+    font-size: 0.9rem;
+  }
+
+  .pet-page-title {
+    padding-left: 12px;
+  }
+
+  .pet-page-faq {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pet-page-concept {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pet-page-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "shorts"
+      "title"
+      "intro"
+      "image"
+      "faq"
+      "concept";
+  }
+
+  .pet-page-image {
+    width: 100%;
+    aspect-ratio: 1340 / 687;
+    margin-top: 32px;
+  }
+
+  .pet-page-shorts {
+    width: 100%;
+    margin: 0;
+  }
+}

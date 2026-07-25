@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 
-const FluxLayout = ({ children }) => {
+const PageLayout = ({ children }) => {
   useEffect(() => {
     if (window.history.length <= 1) {
       window.history.replaceState({}, "", "/#work");
@@ -19,4 +19,4 @@ const FluxLayout = ({ children }) => {
   );
 };
 
-export default FluxLayout;
+export default PageLayout;

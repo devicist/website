@@ -4,17 +4,17 @@ import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import ScrollToTop from "./utils/ScrollToTop";
 import ReactGA from "react-ga";
-import PetModal from "./components/PetModal";
 
 // Layouts
 import HomeLayout from "./layouts/HomeLayout";
 import CaseStudyLayout from "./layouts/CaseStudyLayout";
-import FluxLayout from "./layouts/FluxLayout";
+import PageLayout from "./layouts/PageLayout";
 
 // Views
 import Home from "./views/Home";
 import CaseStudyBraking from "./views/CaseStudyBraking";
 import Flux from "./views/Flux";
+import Pet from "./views/Pet";
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -38,7 +38,6 @@ const App = () => {
 
   return (
     <ScrollToTop>
-      <PetModal />
       <ScrollReveal
         ref={childRef}
         children={() => (
@@ -54,9 +53,15 @@ const App = () => {
               exact
               path="/flux"
               component={Flux}
-              layout={FluxLayout}
+              layout={PageLayout}
             />
-            <AppRoute path="*" component={Flux} layout={FluxLayout} />
+            <AppRoute
+              exact
+              path="/pet"
+              component={Pet}
+              layout={PageLayout}
+            />
+            <AppRoute path="*" component={Flux} layout={PageLayout} />
           </Switch>
         )}
       />

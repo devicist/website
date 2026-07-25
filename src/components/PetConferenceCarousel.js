@@ -19,14 +19,14 @@ const PetConferenceCarousel = () => {
   };
 
   return (
-    <div className="pet-modal-conference-wrap">
-      <div className="pet-modal-conference">
+    <div className="pet-page-conference-wrap">
+      <div className="pet-page-conference">
         {PHOTOS.map((src, index) => (
           <div
             className={
               index === activeIndex
-                ? "pet-modal-conference-slide pet-modal-conference-slide-active"
-                : "pet-modal-conference-slide"
+                ? "pet-page-conference-slide pet-page-conference-slide-active"
+                : "pet-page-conference-slide"
             }
             key={src}
           >
@@ -35,24 +35,24 @@ const PetConferenceCarousel = () => {
         ))}
 
         <button
-          className="pet-modal-conference-prev"
+          className="pet-page-conference-prev"
           onClick={() => goTo(activeIndex - 1)}
           aria-label="Previous photo"
         />
         <button
-          className="pet-modal-conference-next"
+          className="pet-page-conference-next"
           onClick={() => goTo(activeIndex + 1)}
           aria-label="Next photo"
         />
 
-        <div className="pet-modal-conference-dots">
+        <div className="pet-page-conference-dots">
           {PHOTOS.map((src, index) => (
             <button
               key={src}
               className={
                 index === activeIndex
-                  ? "pet-modal-conference-dot pet-modal-conference-dot-active"
-                  : "pet-modal-conference-dot"
+                  ? "pet-page-conference-dot pet-page-conference-dot-active"
+                  : "pet-page-conference-dot"
               }
               onClick={() => goTo(index)}
               aria-label={`Show photo ${index + 1}`}
@@ -60,7 +60,7 @@ const PetConferenceCarousel = () => {
           ))}
         </div>
       </div>
-      <p className="pet-modal-conference-caption">PET at ICRA</p>
+      <p className="pet-page-conference-caption">PET at ICRA</p>
     </div>
   );
 };
