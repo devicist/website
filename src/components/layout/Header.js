@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Logo from "./partials/Logo";
-//import { HashLink as Link } from "react-router-hash-link";
-import { Link } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -114,54 +113,42 @@ const Header = ({
                     )}
                   >
                     <li>
-                      <Link
-                        to="featured"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
+                      <HashLink
+                        to="/#featured"
                         onClick={closeMenu}
                       >
                         Featured
-                      </Link>
+                      </HashLink>
                     </li>
 
                     <li>
-                      <Link
-                        to="commercial"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
+                      <HashLink
+                        to="/#commercial"
                         onClick={closeMenu}
                       >
                         Commercial
-                      </Link>
+                      </HashLink>
                     </li>
 
                     <li>
-                      <Link
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
+                      <HashLink
+                        to="/#about"
                         onClick={closeMenu}
                       >
                         About
-                      </Link>
+                      </HashLink>
                     </li>
                   </ul>
                   {!hideSignin && (
                     <ul className="list-reset header-nav-right">
                       <li>
-                        <Link
-                          to="contact"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
+                        <HashLink
+                          to="/#contact"
                           className="button button-primary button-wide-mobile button-sm"
                           onClick={closeMenu}
                         >
                           Contact Us
-                        </Link>
+                        </HashLink>
                       </li>
                     </ul>
                   )}

@@ -67,30 +67,17 @@ const Hero = ({
           </div>
 
           <div className="hero-content has-text-shadow">
-            <h1
-              className="mt-0 mb-16 reveal-from-bottom has-text-shadow"
-              data-reveal-delay="200"
-            >
-              Embodied Experience
-            </h1>
             <div className="container-s has-text-shadow">
               <p
                 className="m-0 mb-32 reveal-from-bottom h4-mobile"
                 data-reveal-delay="400"
               >
                 <span className="text-block">
-                  From hand-held devices to&nbsp;
+                  Devicist builds machines that feel alive,
                 </span>
-                <span className="text-block">large-scale installations,</span>
-                <br />
                 <span className="text-block">
-                  we blend art and technology&nbsp;
+                  through movement, touch and presence.{" "}
                 </span>
-                <span className="text-block">to create</span>
-                <br />
-                <span className="text-block">immersive experiences for</span>
-                <br />
-                <span className="text-block">physical spaces.</span>
               </p>
 
               <div className="reveal-from-bottom" data-reveal-delay="600"></div>
