@@ -13,6 +13,17 @@
   padding-top: 60px !important;
 }
 
+// Anchor targets for the nav's HashLinks: without this, scrollIntoView()
+// lands their top edge flush with the viewport top, right behind the
+// fixed 60px navbar.
+#featured,
+#commercial,
+#about,
+#contact,
+#work {
+  scroll-margin-top: 76px;
+}
+
 @media (max-width: 820px) {
   .site-header {
     background: rgba(0, 0, 0, 0.75);

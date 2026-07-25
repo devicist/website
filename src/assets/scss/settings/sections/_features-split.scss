@@ -1,7 +1,11 @@
 // Features split (core/sections/_features-split.scss) ---------
-$features-split--padding-t__mobile: 		null;		// features split, top padding (mobile)
+// Top padding zeroed out: the About section already gets its gap from the
+// preceding Portfolio section's bottom padding + its own mt-32 container
+// margin, matching the caseStudyLink-to-"Commercial"-header gap. Leaving
+// the default top padding in would double up the spacing.
+$features-split--padding-t__mobile: 		0px;		// features split, top padding (mobile)
 $features-split--padding-b__mobile: 		null;		// features split, bottom padding (mobile)
-$features-split--padding-t__desktop: 		null;		// features split, top padding (desktop)
+$features-split--padding-t__desktop: 		0px;		// features split, top padding (desktop)
 $features-split--padding-b__desktop: 		null;		// features split, bottom padding (desktop)
 $features-split-header--padding__mobile: 	null;		// features split header, bottom padding (mobile)
 $features-split-header--padding__desktop: 	92px;		// features split header, bottom padding (desktop)
