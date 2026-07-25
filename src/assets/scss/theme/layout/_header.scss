@@ -9,6 +9,14 @@
   height: 60px !important;
 }
 
+.header-nav {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  a:not(.button) {
+    font-weight: 400;
+  }
+}
+
 .site-header + .site-content .section:first-of-type {
   padding-top: 60px !important;
 }
