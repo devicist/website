@@ -75,7 +75,7 @@ const OtherProjects = ({
       },
       {
         src: require("./../../assets/images/portfolio/more/more3.jpg"),
-        width: 1.1,
+        width: 2,
         height: 1,
         // className: "tintMinor",
         title: "Reactive LED lighting for Bristol Myers Squibb",
@@ -89,7 +89,7 @@ const OtherProjects = ({
       },
       {
         src: require("./../../assets/images/portfolio/more/more5.jpg"),
-        width: 1.1,
+        width: 2,
         height: 1,
         // className: "tintMinor",
         title: "VR Position Tracker for OSRAM",
