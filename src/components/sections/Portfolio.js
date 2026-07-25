@@ -151,6 +151,15 @@ const Portfolio = ({
   const [openP3, setOpenP3] = useState(false);
   const modalOpen = useRef(false);
   const fluxVideoRef = useRef(null);
+  // react-responsive-modal auto-focuses the first tabbable element in the
+  // modal on open. Without a target of our own, that can land on a control
+  // further down the content (e.g. the mobile carousel's nav button), which
+  // makes the browser auto-scroll the modal down to reveal it. Focusing this
+  // wrapper - already at the top of the content - keeps the modal open at
+  // the top.
+  const modalContentRefP1 = useRef(null);
+  const modalContentRefP2 = useRef(null);
+  const modalContentRefP3 = useRef(null);
 
   useEffect(() => {
     const video = fluxVideoRef.current;
@@ -190,6 +199,35 @@ const Portfolio = ({
       window.history.back();
     }
   };
+
+  useEffect(() => {
+    const isOpen = openP1 || openP2 || openP3;
+    if (!isOpen) return;
+
+    // Even focusing a wrapper at the top of the content can still nudge the
+    // page/container scroll by a small amount on some mobile browsers (e.g.
+    // Android Chrome). Force it back to the top once the modal has settled,
+    // then restore the page's original scroll position when it closes.
+    const originalScrollY = window.scrollY;
+    const resetScroll = () => {
+      window.scrollTo(0, 0);
+      document
+        .querySelectorAll(".react-responsive-modal-container")
+        .forEach((el) => {
+          el.scrollTop = 0;
+        });
+    };
+
+    const raf = requestAnimationFrame(() => {
+      resetScroll();
+      requestAnimationFrame(resetScroll);
+    });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.scrollTo(0, originalScrollY);
+    };
+  }, [openP1, openP2, openP3]);
 
   useEffect(() => {
     const handlePopState = (e) => {
@@ -346,8 +384,8 @@ const Portfolio = ({
             <Modal
               open={openP1}
               onClose={onCloseModal}
-              center
               closeIcon={closeIcon}
+              initialFocusRef={modalContentRefP1}
               classNames={{
                 modal: "projectModal",
                 overlay: "projectOverlay",
@@ -356,13 +394,15 @@ const Portfolio = ({
               }}
               animationDuration={800}
             >
-              <ProjectModal {...Project1ModalContent} />
+              <div ref={modalContentRefP1} tabIndex={-1}>
+                <ProjectModal {...Project1ModalContent} />
+              </div>
             </Modal>
             <Modal
               open={openP2}
               onClose={onCloseModal}
-              center
               closeIcon={closeIcon}
+              initialFocusRef={modalContentRefP2}
               classNames={{
                 modal: "projectModal",
                 overlay: "projectOverlay",
@@ -371,13 +411,15 @@ const Portfolio = ({
               }}
               animationDuration={800}
             >
-              <ProjectModal {...Project2ModalContent} />
+              <div ref={modalContentRefP2} tabIndex={-1}>
+                <ProjectModal {...Project2ModalContent} />
+              </div>
             </Modal>
             <Modal
               open={openP3}
               onClose={onCloseModal}
-              center
               closeIcon={closeIcon}
+              initialFocusRef={modalContentRefP3}
               classNames={{
                 modal: "projectModal",
                 overlay: "projectOverlay",
@@ -386,7 +428,9 @@ const Portfolio = ({
               }}
               animationDuration={800}
             >
-              <ProjectModal {...Project3ModalContent} />
+              <div ref={modalContentRefP3} tabIndex={-1}>
+                <ProjectModal {...Project3ModalContent} />
+              </div>
             </Modal>
           </div>
         </div>
