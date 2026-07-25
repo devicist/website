@@ -51,7 +51,7 @@ export default function ContactForm() {
         ></textarea>
         <br />
         <button type="submit" className="button mt-24">
-          Submit Form
+          Submit
         </button>
       </form>
 

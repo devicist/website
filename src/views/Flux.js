@@ -11,10 +11,12 @@ const IntroContent = {
     "We designed and built a 40 foot kinetic installation for Shopify's Offices in Toronto. Metallic prisms are rotated in coordinated patterns to create rolling waves of refracted light.",
   imgSrc: require("./../assets/images/fluxOutline.png"),
   videoUrl: "https://www.youtube.com/embed/Z2o9WQWpmp4",
+  hideBackArrow: true,
+  hideCaseStudyLabel: true,
 };
 
 const DesignContent = {
-  body: "Inspired by kinetic artworks and local lakes, we proposed a design to fill out the long and low ceiling, and detailed it into a 3D model and an animated simulation.",
+  body: "Inspired by bodies of water and existing kinetic artworks, we proposed a design to fill out the long and low ceiling, and detailed it into a 3D model and an animated simulation.",
   bgImage: require("./../assets/images/portfolio/flux/prismGraphic.png"),
   images: [
     {

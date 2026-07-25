@@ -18,18 +18,24 @@ const Intro = (IntroContent) => {
         style={{ position: "absolute", opacity: "30%", marginTop: "20px" }}
       />
       <div className="container-sm">
-        <HashLink to="/#work">
-          <img
-            src={backArrow}
-            alt="back arrow"
-            width={40}
-            className="mt-32 mb-32 ft-l"
-            style={{ position: "relative", zIndex: "10" }}
-          />
-        </HashLink>
+        {!IntroContent.hideBackArrow && (
+          <HashLink to="/#work">
+            <img
+              src={backArrow}
+              alt="back arrow"
+              width={40}
+              className="mt-32 mb-32 ft-l"
+              style={{ position: "relative", zIndex: "10" }}
+            />
+          </HashLink>
+        )}
         <div className={innerClasses}>
           <div className="cs-hero-content">
-            <h3 className="mt-16 mb-16 ta-l reveal-from-bottom">Case Study:</h3>
+            {!IntroContent.hideCaseStudyLabel && (
+              <h3 className="mt-16 mb-16 ta-l reveal-from-bottom">
+                Case Study:
+              </h3>
+            )}
             <h1 className="mt-0 mb-16 ta-l reveal-from-bottom">
               {IntroContent.title}
             </h1>

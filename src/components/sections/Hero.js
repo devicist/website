@@ -26,13 +26,13 @@ const Hero = ({
     "hero section center-content",
     hasBgColor && "has-bg-color",
     invertColor && "invert-color",
-    className
+    className,
   );
 
   const innerClasses = classNames(
     "hero-inner section-inner",
     // topDivider && "has-top-divider",
-    bottomDivider && "has-bottom-divider"
+    bottomDivider && "has-bottom-divider",
   );
 
   const videoRef = useRef(null);
@@ -71,7 +71,7 @@ const Hero = ({
               className="mt-0 mb-16 reveal-from-bottom has-text-shadow"
               data-reveal-delay="200"
             >
-              Digital Meets Physical
+              Embodied Experience
             </h1>
             <div className="container-s has-text-shadow">
               <p

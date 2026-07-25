@@ -9,6 +9,7 @@ import PetModal from "./components/PetModal";
 // Layouts
 import HomeLayout from "./layouts/HomeLayout";
 import CaseStudyLayout from "./layouts/CaseStudyLayout";
+import FluxLayout from "./layouts/FluxLayout";
 
 // Views
 import Home from "./views/Home";
@@ -53,9 +54,9 @@ const App = () => {
               exact
               path="/flux"
               component={Flux}
-              layout={CaseStudyLayout}
+              layout={FluxLayout}
             />
-            <AppRoute path="*" component={Flux} layout={CaseStudyLayout} />
+            <AppRoute path="*" component={Flux} layout={FluxLayout} />
           </Switch>
         )}
       />
