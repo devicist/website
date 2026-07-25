@@ -72,13 +72,8 @@ const Hero = ({
                 className="m-0 mb-32 reveal-from-bottom h4-mobile"
                 data-reveal-delay="400"
               >
-                <span className="text-block">
-                  Devicist builds sculptural machines
-                </span>{" "}
-                <span className="text-block">
-                  that feel strangely alive through&nbsp;
-                </span>
-                <span className="text-block">movement, touch and presence</span>
+                <span className="text-block">Machines that feel</span>{" "}
+                <span className="text-block">strangely alive&nbsp;</span>
               </p>
 
               <div className="reveal-from-bottom" data-reveal-delay="600"></div>
