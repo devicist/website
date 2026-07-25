@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Devicist</title>
+    <!--
+      GitHub Pages has no server-side router, so a direct hit on a
+      client-side route (e.g. /pet) 404s. This redirects to the SPA's
+      index.html with the intended path encoded in the query string;
+      the restore script in index.html then puts the real URL back via
+      history.replaceState. See https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        "/?/" +
+        l.pathname.slice(1).replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
