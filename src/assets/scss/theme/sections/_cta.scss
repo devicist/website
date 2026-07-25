@@ -1,8 +1,19 @@
 .cta {
-    
+
+    .form-label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
     .form-input {
         border-color: transparent;
         border-radius: 6px;
+    }
+
+    .form-input input,
+    textarea.form-input {
+        margin-top: 4px;
     }
 }
 
