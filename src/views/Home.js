@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Hero />
       <Portfolio topDivider />
-      <OtherProjects />
+      {/* <OtherProjects /> */}
       <About />
       <Capabilities />
       {/* <Process invertMobile topDivider /> */}

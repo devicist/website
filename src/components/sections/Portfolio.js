@@ -44,7 +44,7 @@ const Portfolio = ({
 
   const Project1ModalContent = {
     title: "LED lighting",
-    body: "We developed interactive LED lighting for studio F-Minus' 30 foot holiday sculpture. A large illuminated snowflake occupies the atrium of Brookfield Place in Toronto. Touching the surface causes the colors to shift",
+    body: "We developed interactive LED lighting for studio F-Minus' 30 foot holiday sculpture: Frost. A large illuminated snowflake occupies the atrium of Brookfield Place in Toronto. Touching the surface causes the colors to shift",
     videoUrl: "https://www.youtube.com/embed/cyy3FVcJ6sU",
     images: [
       {
@@ -110,7 +110,7 @@ const Portfolio = ({
 
   const Project3ModalContent = {
     title: "Illuminated Brain",
-    body: "Interactive model of a brain that responds to touch, displaying various patterns. Produced in collaboration with Globacore Interactive for Dassault Systèmes's Digital Twin exhibit at CES 2023.",
+    body: "Interactive model of a brain that responds to touch, displaying various patterns. Produced in collaboration with Globacore Interactive for Dassault Systèmes's Digital Twin exhibit at CES.",
     videoUrl: "https://www.youtube.com/embed/NIznK_WQr6A",
     images: [
       {
@@ -303,25 +303,6 @@ const Portfolio = ({
               </button>
             </div>
 
-            <div className="reveal-from-left projectGrid">
-              <button
-                className="projectButton border-0"
-                onClick={onOpenModalP2}
-              >
-                <Card className="bg-black projectCard ">
-                  <Card.Img
-                    className="tintMajor"
-                    src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
-                  />
-                  <Card.ImgOverlay>
-                    {/* <Card.Body>
-                        <Card.Title className="projectTitle">KIA</Card.Title>
-                      </Card.Body> */}
-                  </Card.ImgOverlay>
-                </Card>
-              </button>
-            </div>
-
             <div className="reveal-from-right projectGrid">
               <button
                 className="projectButton border-0"
@@ -338,6 +319,25 @@ const Portfolio = ({
                           BCE Place
                         </Card.Title> */}
                     </Card.Body>
+                  </Card.ImgOverlay>
+                </Card>
+              </button>
+            </div>
+
+            <div className="reveal-from-left projectGrid">
+              <button
+                className="projectButton border-0"
+                onClick={onOpenModalP2}
+              >
+                <Card className="bg-black projectCard ">
+                  <Card.Img
+                    className="tintMajor"
+                    src={require("./../../assets/images/portfolio/braking/kioskCroppedCover.jpg")}
+                  />
+                  <Card.ImgOverlay>
+                    {/* <Card.Body>
+                        <Card.Title className="projectTitle">KIA</Card.Title>
+                      </Card.Body> */}
                   </Card.ImgOverlay>
                 </Card>
               </button>

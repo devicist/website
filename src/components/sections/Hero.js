@@ -74,7 +74,7 @@ const Hero = ({
               >
                 <span className="text-block">Devicist builds machines</span>{" "}
                 <span className="text-block">
-                  that feel strangely alive through
+                  that feel strangely alive through&nbsp;
                 </span>
                 <span className="text-block">movement, touch and presence</span>
               </p>
