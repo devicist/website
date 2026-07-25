@@ -32,13 +32,13 @@ const Capabilities = ({
     bottomOuterDivider && "has-bottom-divider",
     hasBgColor && "has-bg-color",
     invertColor && "invert-color",
-    className
+    className,
   );
 
   const innerClasses = classNames(
     "features-split-inner section-inner",
     topDivider && "has-top-divider",
-    bottomDivider && "has-bottom-divider"
+    bottomDivider && "has-bottom-divider",
   );
 
   const sectionHeader = {
@@ -52,12 +52,14 @@ const Capabilities = ({
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className="capabilities-list">
             <ul>
-              <li>Fabrication</li>
+              <li>Creative</li>
               <li>Industrial Design</li>
+              <li>Fabrication</li>
               <li>Rapid Prototyping</li>
               <li>3D Printing</li>
-              <li>Electronics and Robotics</li>
-              <li>PCB Design and Fab</li>
+              <li>Electronics</li>
+              <li>Robotics</li>
+              <li>PCB Design and Fabrication</li>
               <li>LED and Kinetic Displays</li>
               <li>Apps and Software</li>
               <li>Computer Vision</li>

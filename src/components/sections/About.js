@@ -62,13 +62,16 @@ const About = ({
               <div className="container-sm txt">
                 <b>Devicist</b> is the studio of <b>Nick Stedman</b>, an artist,
                 creative technologist and university lecturer with over 20 years
-                of experience building innovative projects with electronics,
-                coding, and fabrication. His robotic artworks have been
-                showcased globally, including at Ars Electronica, the Ontario
-                Science Center, and on Japanese TV. Since founding Devicist in
-                2014, Nick and his team have partnered with companies, agencies,
-                architects, and creators on diverse projects, from permanent
-                installations to trade show centerpieces. Some of our clients:
+                of experience building embodied experiences with electronics,
+                coding, and fabrication. His award-winning robotic artworks have
+                been showcased globally, including at Ars Electronica, the
+                Ontario Science Center, SIGGRAPH and on Japanese TV. Since
+                founding Devicist in 2014, Nick and his team have partnered with
+                fabricators, agencies, architects, and creators on diverse
+                projects, from permanent installations to trade show
+                centerpieces.
+                <br />
+                Some of our clients:
               </div>
               <img src={companyLogos} alt="Company Logos" className="mt-64" />
             </div>

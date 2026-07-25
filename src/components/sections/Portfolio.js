@@ -38,7 +38,7 @@ const Portfolio = ({
   );
 
   const tilesClasses = classNames(
-    "center-content container",
+    "center-content container-sm",
     pushLeft && "push-left",
   );
 
