@@ -11,10 +11,7 @@ const Pet = () => {
     <section className="pet-page section">
       <div className="pet-page-inner">
         <div className="pet-page-image">
-          <img
-            src={petCradledNewLarge}
-            alt="PET robot being cradled in arms"
-          />
+          <img src={petCradledNewLarge} alt="PET robot being cradled in arms" />
         </div>
         <PetShortsCarousel />
         <h1 className="pet-page-title">PET</h1>
@@ -35,20 +32,23 @@ const Pet = () => {
         <dl className="pet-page-faq">
           <div>
             <dt>What's it for?</dt>
-            <dd>To explore affect, intimacy and reciprocity through touch.</dd>
+            <dd>
+              To explore affect, intimacy and reciprocity through embodiment and
+              touch.
+            </dd>
           </div>
           <div>
             <dt>How does it know what you're doing?</dt>
             <dd>
-              Capacitive sensors + FSRs + IMU + MIT mode feedback from bldc
-              motors.
+              PET senses skin contact, hand pressure, orientation, temperature,
+              energy level, position, velocity and torque for each module.
             </dd>
           </div>
           <div>
             <dt>What's controlling the movement?</dt>
             <dd>
-              An LLM interprets touch gestures through an emotional lens and
-              enacts behavioral responses.
+              An LLM agent interprets touch gestures through an emotional lens
+              and enacts behavioral responses.
             </dd>
           </div>
           <div>
@@ -76,16 +76,16 @@ const Pet = () => {
                 Most social robots seek rapport through facial expression,
                 speech, or gaze. PET takes a different approach. It is a
                 speculative robotic companion, more sculpture than animal,
-                designed to be held, handled, and physically engaged rather
-                than observed at a distance. It responds to your strokes, your
-                grip, the way you roll it in your arms; it develops a feeling
-                for you and expresses it through movement — be it cuddling,
-                writhing, or recoiling.
+                designed to be held, handled, and physically engaged rather than
+                observed at a distance. It responds to your strokes, your grip,
+                the way you roll it in your arms; it develops a feeling for you
+                and expresses it through movement — be it cuddling, writhing, or
+                recoiling.
               </p>
               <p>
                 By privileging touch, PET is freed from representational
-                demands, and the aesthetic emerges from function. Its body is
-                a chain of prismatic modules inspired by pixels; more modules
+                demands, and the aesthetic emerges from function. Its body is a
+                chain of prismatic modules inspired by pixels; more modules
                 raise PET's tactile resolution. The modules have smooth
                 continuous surfaces, each covered in a variety of sensors,
                 joined by compliant, proprioceptive motors. The body is
@@ -93,20 +93,20 @@ const Pet = () => {
                 arms.
               </p>
               <p>
-                PET's movement emerges from ongoing interaction. Sensor
-                signals are processed in real time and categorized into
-                gestures, encoded into valenced language (e.g. stroke vs.
-                poke, cradle vs. restrict), then sent to an LLM that enacts a
-                behaviour reflecting how it feels about the ongoing
-                interaction. The result is a non-anthropomorphic social agent
-                whose expressiveness arises from how it feels rather than how
-                it looks.
+                PET's movement emerges from ongoing interaction. Sensor signals
+                are processed in real time and categorized into gestures,
+                encoded into valenced language (e.g. stroke vs. poke, cradle vs.
+                restrict), then sent to an LLM that enacts a behaviour
+                reflecting how it feels about the ongoing interaction. The
+                result is a non-anthropomorphic social agent whose
+                expressiveness arises from how it feels rather than how it
+                looks.
               </p>{" "}
               <p>
-                PET is in active development. Multiple versions are in
-                development: a collectible, a human-sized version for
-                performance, and one that is room-scale for installation. If
-                you are interested in collaborating, please{" "}
+                PET is in active development. Multiple versions are in the
+                works: a collectible, a human-sized version for performance, and
+                one that is room-scale for installation. If you are interested
+                in collaborating, please{" "}
                 <HashLink to="/#contact">
                   <u>reach out</u>
                 </HashLink>
