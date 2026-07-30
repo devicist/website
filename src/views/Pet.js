@@ -19,7 +19,7 @@ const Pet = () => {
           PET is a robotic companion, more sculpture than animal. PET responds
           to touch: your grip, your strokes, the way you roll it in your arms.
           It develops a feeling for you, and expresses it through movement:
-          cuddling, writhing, curling, recoiling. PET was awarded{" "}
+          exploring, writhing, cuddling, recoiling. PET was awarded{" "}
           <a
             href="https://icsr2026.uk/awards/"
             target="_blank"
@@ -61,8 +61,8 @@ const Pet = () => {
           <div>
             <dt>Is PET finished? Is it for Sale?</dt>
             <dd>
-              The next version is in development. PET is not available for
-              purchase at this time, but you are welcome to{" "}
+              PET is ongoing. Multiple versions are in development. PET is not
+              available for purchase at this time, but you are welcome to{" "}
               <HashLink to="/#contact">
                 <u>inquire</u>.
               </HashLink>{" "}
