@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# large source assets not referenced by app code
+src/assets/images/portfolio/blanket/hero.psd
+src/assets/images/portfolio/blanket/new/
+src/assets/images/portfolio/blanket/BlanketForBook/
+src/assets/images/portfolio/blanket/*original-backup*
+src/assets/images/portfolio/blanket/blanket-upscaled.mp4

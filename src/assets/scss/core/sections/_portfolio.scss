@@ -174,6 +174,9 @@
 	transform: scale(1.02);
 	transform-origin: center;
 }
+.caseStudyImgBlanket{
+	object-position: center 100%;
+}
 .caseStudyImgGradient{
 	// Gradient stops are percentages of the overlay's own height (which
 	// spans the full image via .card-img-overlay's absolute inset:0), so

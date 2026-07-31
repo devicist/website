@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Button from "../elements/Button";
 import flux from "./../../assets/images/portfolio/fluxCoverNew.mp4";
 import petCradled from "./../../assets/images/portfolio/pet/cradled.jpg";
+import blanketCover from "./../../assets/images/portfolio/blanket/blanket-hero.jpg";
 // import wheel from "../../assets/images/portfolio/braking/brakingCsCover.png";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
@@ -309,6 +310,22 @@ const Portfolio = ({
                       Flux
                     </Button>
                   </Link> */}
+                </Card.ImgOverlay>
+              </Card>
+            </div>
+          </Link>
+
+          <Link to="/blanket" className="caseStudyLink">
+            <div className="mt-64 caseStudyWrapper">
+              <Card className="caseStudyCard">
+                <Card.Img
+                  className="caseStudyImg caseStudyImgBlanket"
+                  src={blanketCover}
+                />
+                <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
+                  {/* <Card.Title className="mt-auto caseStudyTitle has-text-shadow">
+                    The Blanket
+                  </Card.Title> */}
                 </Card.ImgOverlay>
               </Card>
             </div>

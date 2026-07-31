@@ -1,0 +1,301 @@
+.blanket-page {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #c7c7c7;
+}
+
+.blanket-page-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    "image"
+    "title"
+    "intro"
+    "carousel"
+    "faq"
+    "concept";
+}
+
+@media (min-width: 641px) {
+  .blanket-page-inner {
+    padding-top: 32px;
+  }
+}
+
+.blanket-page-title {
+  grid-area: title;
+  padding-left: 32px;
+  margin-bottom: 0;
+}
+
+.blanket-page-image {
+  grid-area: image;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4096 / 2096;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blanket-page-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+}
+
+.blanket-page-image-placeholder {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.blanket-page-intro {
+  grid-area: intro;
+  padding: 32px 32px 0;
+  margin: 0;
+  line-height: 1.75;
+}
+
+.blanket-page-carousel-wrap {
+  grid-area: carousel;
+  padding: 32px 32px 0;
+}
+
+.blanket-page-carousel {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #000;
+}
+
+.blanket-page-carousel-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.blanket-page-carousel-slide-active {
+  display: block;
+}
+
+.blanket-page-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blanket-page-carousel-prev,
+.blanket-page-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+  z-index: 1;
+}
+
+.blanket-page-carousel-prev {
+  left: 12px;
+}
+
+.blanket-page-carousel-next {
+  right: 12px;
+}
+
+.blanket-page-carousel-prev::before,
+.blanket-page-carousel-next::before {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #eceded;
+  border-bottom: 2px solid #eceded;
+}
+
+.blanket-page-carousel-prev::before {
+  transform: rotate(135deg) translate(-1px, -1px);
+}
+
+.blanket-page-carousel-next::before {
+  transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.blanket-page-carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 1;
+}
+
+.blanket-page-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.blanket-page-carousel-dot-active {
+  background: #eceded;
+}
+
+.blanket-page-carousel-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
+}
+
+.blanket-page-faq {
+  grid-area: faq;
+  padding: 0 32px 64px;
+  margin: 32px 0 0;
+}
+
+.blanket-page-faq > div {
+  border-top: 1px solid #111;
+  padding: 22px 0;
+}
+
+.blanket-page-faq > div:last-child {
+  border-bottom: 1px solid #111;
+}
+
+.blanket-page-faq dt {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eceded;
+  margin-bottom: 10px;
+}
+
+.blanket-page-faq dd {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.blanket-page-faq dd a,
+.blanket-page-intro a {
+  color: #eceded;
+  text-decoration: none;
+}
+
+.blanket-page-faq dd a:hover,
+.blanket-page-intro a:hover {
+  color: #fff;
+}
+
+.blanket-page-video {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  max-height: 480px;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  margin: 0 auto;
+}
+
+.blanket-page-faq dd p {
+  margin: 0;
+}
+
+.blanket-page-faq dd p + p {
+  margin-top: 1em;
+}
+
+.blanket-page-concept {
+  grid-area: concept;
+  padding: 0 32px 64px;
+}
+
+.blanket-page-concept img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blanket-page-concept-caption {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #717d86;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .blanket-page {
+    font-size: 0.875rem;
+  }
+
+  .blanket-page-intro {
+    padding: 24px 12px 0;
+  }
+
+  .blanket-page-faq dt {
+    font-size: 0.9rem;
+  }
+
+  .blanket-page-title {
+    padding-left: 12px;
+  }
+
+  .blanket-page-faq {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .blanket-page-inner {
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "image"
+      "title"
+      "intro"
+      "carousel"
+      "faq"
+      "concept";
+  }
+
+  .blanket-page-image {
+    width: 100%;
+    aspect-ratio: 1340 / 687;
+  }
+
+  .blanket-page-carousel-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .blanket-page-concept {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

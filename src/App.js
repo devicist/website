@@ -15,6 +15,7 @@ import Home from "./views/Home";
 import CaseStudyBraking from "./views/CaseStudyBraking";
 import Flux from "./views/Flux";
 import Pet from "./views/Pet";
+import Blanket from "./views/Blanket";
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -59,6 +60,12 @@ const App = () => {
               exact
               path="/pet"
               component={Pet}
+              layout={PageLayout}
+            />
+            <AppRoute
+              exact
+              path="/blanket"
+              component={Blanket}
               layout={PageLayout}
             />
             <AppRoute path="*" component={Flux} layout={PageLayout} />
