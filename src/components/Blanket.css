@@ -33,8 +33,30 @@
   margin-bottom: 0;
 }
 
-.blanket-page-image {
+.blanket-page-hero-video {
   grid-area: image;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blanket-page-hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.blanket-page-secondary-image-wrap {
+  grid-area: carousel;
+  padding: 32px 32px 0;
+}
+
+.blanket-page-image {
   min-width: 0;
   overflow: hidden;
   aspect-ratio: 4096 / 2096;
@@ -69,6 +91,11 @@
 .blanket-page-carousel-wrap {
   grid-area: carousel;
   padding: 32px 32px 0;
+}
+
+.blanket-page-faq .blanket-page-carousel-wrap {
+  grid-area: auto;
+  padding: 0;
 }
 
 .blanket-page-carousel {
@@ -214,17 +241,6 @@
   color: #fff;
 }
 
-.blanket-page-video {
-  display: block;
-  width: 100%;
-  max-width: 640px;
-  height: auto;
-  max-height: 480px;
-  aspect-ratio: 4 / 3;
-  background: #000;
-  margin: 0 auto;
-}
-
 .blanket-page-faq dd p {
   margin: 0;
 }
@@ -287,6 +303,11 @@
   .blanket-page-image {
     width: 100%;
     aspect-ratio: 1340 / 687;
+  }
+
+  .blanket-page-secondary-image-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .blanket-page-carousel-wrap {

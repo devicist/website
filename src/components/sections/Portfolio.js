@@ -138,11 +138,6 @@ const Portfolio = ({
   };
 
   //edit section header content here
-  const sectionHeader = {
-    title: "Featured",
-    // paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
-  };
-
   const subHeader = {
     title: "Commercial",
   };
@@ -260,14 +255,11 @@ const Portfolio = ({
     <section id="work">
       <div className={innerClasses}>
         <div className="container reveal-from-bottom mt-32">
-          {/*this is a seperate .js file found in sections > partials*/}
-          <SectionHeader
-            data={sectionHeader}
+          <Link
+            to="/pet"
             id="featured"
-            className="center-content mt-0"
-          />
-
-          <Link to="/pet" className="projectButton d-block w-100">
+            className="projectButton d-block w-100"
+          >
             <Card className="caseStudyCard">
               <Card.Img className="caseStudyImg" src={petCradled} />
               <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">
