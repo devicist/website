@@ -8,11 +8,12 @@ const getYouTubeId = (url) => {
 
 const withAutoplay = (url) => `${url}${url.includes("?") ? "&" : "?"}autoplay=1`;
 
-const VideoEmbed = ({ embedId, className }) => {
+const VideoEmbed = ({ embedId, className, posterSrc }) => {
   const videoId = getYouTubeId(embedId);
   const [isPlaying, setIsPlaying] = useState(!videoId);
   const [thumbSrc, setThumbSrc] = useState(
-    videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null
+    posterSrc ||
+      (videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null)
   );
 
   const wrapperClass = `video-responsive${className ? ` ${className}` : ""}`;
@@ -30,9 +31,11 @@ const VideoEmbed = ({ embedId, className }) => {
             src={thumbSrc}
             alt=""
             className="video-facade-thumb"
-            onError={() =>
-              setThumbSrc(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`)
-            }
+            onError={() => {
+              if (!posterSrc) {
+                setThumbSrc(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+              }
+            }}
           />
           <span className="video-facade-play" aria-hidden="true" />
         </button>
@@ -58,6 +61,7 @@ const VideoEmbed = ({ embedId, className }) => {
 VideoEmbed.propTypes = {
   embedId: PropTypes.string.isRequired,
   className: PropTypes.string,
+  posterSrc: PropTypes.string,
 };
 
 export default VideoEmbed;

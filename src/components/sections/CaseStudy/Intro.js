@@ -48,6 +48,7 @@ const Intro = (IntroContent) => {
                 <VideoEmbed
                   embedId={IntroContent.videoUrl}
                   className={IntroContent.videoClassName}
+                  posterSrc={IntroContent.videoPosterSrc}
                 />
               </div>
             </div>
