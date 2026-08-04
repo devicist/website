@@ -39,6 +39,7 @@ const Deploy = (DeployContent) => {
           photos={DeployContent.images}
           onClick={openLightbox}
           targetRowHeight={300}
+          limitNodeSearch={2}
         />
       </div>
 

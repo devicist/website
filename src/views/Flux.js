@@ -10,7 +10,8 @@ const IntroContent = {
   description:
     "We designed and built a 40 foot kinetic installation for Shopify's Offices in Toronto. Metallic prisms are rotated in coordinated patterns to create rolling waves of refracted light.",
   imgSrc: require("./../assets/images/fluxOutline.png"),
-  videoUrl: "https://www.youtube.com/embed/Z2o9WQWpmp4",
+  videoUrl: "https://www.youtube.com/embed/Z2o9WQWpmp4?modestbranding=1&rel=0",
+  videoClassName: "flux-video-embed",
   hideBackArrow: true,
   hideCaseStudyLabel: true,
 };
@@ -73,24 +74,19 @@ const DeployContent = {
   body: "The complete work refracts ambient light in rolling wave patterns. Like a lake, viewers can be transfixed by the rhythms, or it can melt into the background.",
   images: [
     {
+      src: require("./../assets/images/portfolio/flux/flux-4.jpg"),
+      width: 2698,
+      height: 1304,
+    },
+    {
+      src: require("./../assets/images/portfolio/flux/flux-straight.png"),
+      width: 3000,
+      height: 4500,
+    },
+    {
       src: require("./../assets/images/portfolio/flux/deployImage1_1.jpg"),
-      width: 2,
-      height: 1,
-    },
-    {
-      src: require("./../assets/images/portfolio/flux/deployImage2_2.jpg"),
-      width: 1,
-      height: 1,
-    },
-    {
-      src: require("./../assets/images/portfolio/flux/deployImage3_3.jpg"),
-      width: 1,
-      height: 1,
-    },
-    {
-      src: require("./../assets/images/portfolio/flux/deployImage4_4.jpg"),
-      width: 3,
-      height: 1,
+      width: 6000,
+      height: 4000,
     },
   ],
 };

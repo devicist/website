@@ -45,7 +45,10 @@ const Intro = (IntroContent) => {
               </p>
 
               <div className="reveal-from-bottom mt-32" data-reveal-delay="600">
-                <VideoEmbed embedId={IntroContent.videoUrl} />
+                <VideoEmbed
+                  embedId={IntroContent.videoUrl}
+                  className={IntroContent.videoClassName}
+                />
               </div>
             </div>
           </div>

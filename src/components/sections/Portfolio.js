@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 import Button from "../elements/Button";
 import flux from "./../../assets/images/portfolio/fluxCoverNew.mp4";
 import petCradled from "./../../assets/images/portfolio/pet/cradled.jpg";
-import blanketCover from "./../../assets/images/portfolio/blanket/blanket-hero.jpg";
+import blanketCover from "./../../assets/images/portfolio/blanket/blanket.jpg";
 // import wheel from "../../assets/images/portfolio/braking/brakingCsCover.png";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
@@ -255,11 +255,7 @@ const Portfolio = ({
     <section id="work">
       <div className={innerClasses}>
         <div className="container reveal-from-bottom mt-32">
-          <Link
-            to="/pet"
-            id="featured"
-            className="projectButton d-block w-100"
-          >
+          <Link to="/pet" id="featured" className="projectButton d-block w-100">
             <Card className="caseStudyCard">
               <Card.Img className="caseStudyImg" src={petCradled} />
               <Card.ImgOverlay className="d-flex flex-column caseStudyImgGradient">

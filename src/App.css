@@ -18,4 +18,73 @@
     width: 100%;
     position: absolute;
   }
-  
+
+.video-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: #000;
+}
+
+.video-facade-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-facade-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.video-facade-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.video-facade:hover .video-facade-play,
+.video-facade:focus-visible .video-facade-play {
+  background-color: #ff0000;
+}
+
+/* YouTube's control bar/title UI has a minimum pixel size, so it reads as
+   oversized on narrow mobile embeds. Render the iframe at 2x the visual
+   size (so YouTube lays out its UI at normal proportions) then scale the
+   whole thing back down, which shrinks the UI along with the video. */
+@media (max-width: 640px) {
+  .flux-video-embed iframe {
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+
+  .video-facade-play {
+    width: 46px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .video-facade-play::before {
+    border-width: 8px 0 8px 13px;
+  }
+}
