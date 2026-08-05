@@ -12,7 +12,6 @@ const IntroContent = {
   imgSrc: require("./../assets/images/fluxOutline.png"),
   videoUrl: "https://www.youtube.com/embed/Z2o9WQWpmp4?modestbranding=1&rel=0",
   videoClassName: "flux-video-embed",
-  videoPosterSrc: require("./../assets/images/portfolio/flux/flux-4.jpg"),
   hideBackArrow: true,
   hideCaseStudyLabel: true,
 };

@@ -38,10 +38,6 @@
   object-fit: cover;
 }
 
-.flux-video-embed .video-facade-thumb {
-  object-position: right;
-}
-
 .video-facade-play {
   position: absolute;
   top: 50%;
