@@ -17,8 +17,8 @@
     "title"
     "intro"
     "shorts"
-    "faq"
-    "concept";
+    "content"
+    "faq";
 }
 
 @media (min-width: 641px) {
@@ -51,7 +51,7 @@
 .pet-page-shorts {
   grid-area: shorts;
   width: 240px;
-  margin: 32px auto 0;
+  margin: 32px auto 22px;
   position: relative;
   aspect-ratio: 0.667;
   overflow: hidden;
@@ -147,7 +147,7 @@
 
 .pet-page-conference-wrap {
   width: 240px;
-  margin: 0 auto 22px;
+  margin: 32px auto 22px;
 }
 
 .pet-page-conference {
@@ -253,8 +253,15 @@
   background: #eceded;
 }
 
-.pet-page-intro {
+.pet-page-intro-block {
   grid-area: intro;
+}
+
+.pet-page-content {
+  grid-area: content;
+}
+
+.pet-page-intro {
   padding: 32px 32px 0;
   margin: 0;
   line-height: 1.75;
@@ -309,14 +316,18 @@
 }
 
 .pet-page-concept {
-  grid-area: concept;
-  padding: 0 32px 64px;
+  padding: 32px 32px 0;
 }
 
 .pet-page-concept img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.pet-page-viz img {
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 .pet-page-concept-caption {
@@ -361,8 +372,8 @@
       "title"
       "intro"
       "image"
-      "faq"
-      "concept";
+      "content"
+      "faq";
   }
 
   .pet-page-image {
@@ -373,6 +384,10 @@
 
   .pet-page-shorts {
     width: 100%;
-    margin: 0;
+    margin: 0 0 22px;
+  }
+
+  .pet-page-viz img {
+    max-width: 100%;
   }
 }
