@@ -1,0 +1,108 @@
+---
+layout: layouts/page.njk
+title: "PET — A Robot That Feels Touch | Devicist"
+description: "PET is a speculative robotic companion that senses touch and expresses feeling through movement. Winner of Best Art and Design at ICSR 2026."
+permalink: /pet/
+extraCss: |
+  <link rel="stylesheet" href="/css/pet.css" />
+extraJs: |
+  <script defer src="/js/carousels.js"></script>
+---
+<section class="pet-page section">
+  <div class="pet-page-inner">
+    <div class="pet-page-image">
+      <img src="/assets/images/portfolio/pet/cradled.jpg" alt="PET robot being cradled in arms" />
+    </div>
+
+    <div class="pet-page-shorts" data-carousel data-carousel-videos data-active-class="pet-page-shorts-slide-active" data-dot-active-class="pet-page-shorts-dot-active">
+      <div class="pet-page-shorts-slide pet-page-shorts-slide-active" data-carousel-slide>
+        <video src="/assets/videos/PET%20-%20prototype%201%20-%202025.mp4" muted loop playsinline preload="auto"></video>
+      </div>
+      <div class="pet-page-shorts-slide" data-carousel-slide>
+        <video src="/assets/videos/PET_ICRA%20-%20prototype%202%20-%202026.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="pet-page-shorts-slide" data-carousel-slide>
+        <video src="/assets/videos/PET_ICSR%20-%202026.mp4" muted loop playsinline preload="metadata" style="object-position: left"></video>
+      </div>
+
+      <button class="pet-page-shorts-prev" data-carousel-prev aria-label="Previous short"></button>
+      <button class="pet-page-shorts-next" data-carousel-next aria-label="Next short"></button>
+
+      <div class="pet-page-shorts-dots">
+        <button class="pet-page-shorts-dot pet-page-shorts-dot-active" data-carousel-dot aria-label="Show short 1"></button>
+        <button class="pet-page-shorts-dot" data-carousel-dot aria-label="Show short 2"></button>
+        <button class="pet-page-shorts-dot" data-carousel-dot aria-label="Show short 3"></button>
+      </div>
+    </div>
+
+    <h1 class="pet-page-title">PET</h1>
+
+    <div class="pet-page-intro-block">
+      <p class="pet-page-intro">
+        PET is a speculative robot that is part sculpture, part companion.
+        PET responds to touch: your grip, your strokes, the way you roll it
+        in your arms. It develops a feeling for you, and expresses it
+        through movement: exploring, writhing, cuddling, recoiling. PET was
+        awarded
+        <a href="https://icsr2026.uk/awards/" target="_blank" rel="noopener noreferrer"><u>Best Art and Design</u></a>
+        at ICSR 2026.
+      </p>
+    </div>
+
+    <div class="pet-page-content">
+      <p class="pet-page-intro">
+        PET&rsquo;s body is optimized for being lifted, cradled, and repositioned
+        in human arms. With smooth surfaces, each module is endowed with
+        varied sensors, and joined by compliant, proprioceptive motors. Like
+        pixels, PET&rsquo;s modularity increases the resolution of sensing and
+        movement.
+      </p>
+
+      <div class="pet-page-conference-wrap">
+        <div class="pet-page-conference" data-carousel data-active-class="pet-page-conference-slide-active" data-dot-active-class="pet-page-conference-dot-active">
+          {% for src in petConferenceImages %}
+          <div class="pet-page-conference-slide{{ ' pet-page-conference-slide-active' if loop.first else '' }}" data-carousel-slide>
+            <img src="{{ src }}" alt="PET at a robotics conference {{ loop.index }}" />
+          </div>
+          {% endfor %}
+
+          <button class="pet-page-conference-prev" data-carousel-prev aria-label="Previous photo"></button>
+          <button class="pet-page-conference-next" data-carousel-next aria-label="Next photo"></button>
+
+          <div class="pet-page-conference-dots">
+            {% for src in petConferenceImages %}
+            <button class="pet-page-conference-dot{{ ' pet-page-conference-dot-active' if loop.first else '' }}" data-carousel-dot aria-label="Show photo {{ loop.index }}"></button>
+            {% endfor %}
+          </div>
+        </div>
+        <p class="pet-page-conference-caption">PET at ICRA</p>
+      </div>
+
+      <p class="pet-page-intro">
+        PET's movement emerges from ongoing interaction. Sensor signals are
+        processed in real time, categorized into gestures, encoded into
+        valenced language (e.g. stroke vs. poke), processed by an LLM that
+        enacts movements reflecting how it feels about the way it is being
+        touched. The result is an embodied agent whose expressiveness
+        emerges from how it feels rather than anthropomorphic imitation.
+      </p>
+
+      <div class="pet-page-concept pet-page-viz">
+        <img src="/assets/images/portfolio/pet/pet_viz.png" alt="PET sensor and motor telemetry visualization" />
+        <p class="pet-page-concept-caption">Real-time sensor and motor telemetry</p>
+      </div>
+
+      <p class="pet-page-intro">
+        PET is in active development. Multiple versions are in the works: a
+        collectible, a human-sized version for performance, and one that is
+        room-scale for installation. If you are interested in collaborating,
+        please <a href="/#contact"><u>reach out</u></a>.
+      </p>
+
+      <div class="pet-page-concept">
+        <img src="/assets/images/portfolio/pet/concept-medium.jpg" alt="PET installation concept" />
+        <p class="pet-page-concept-caption">Installation concept</p>
+      </div>
+    </div>
+  </div>
+</section>

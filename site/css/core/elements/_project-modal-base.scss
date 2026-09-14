@@ -1,0 +1,73 @@
+// Structural/positioning CSS for the vanilla project-modal (replaces
+// react-responsive-modal's base styles.css, which the old React app relied
+// on). `.projectModal` / `.projectOverlay` (in _projectModal.scss) still
+// provide the visual skin on top of this.
+
+.project-modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+}
+
+.project-modal.is-active {
+	display: block;
+}
+
+.project-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: -1;
+	animation: project-modal-fade-in 0.8s ease-in-out both;
+}
+
+.project-modal-container {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: center;
+	padding: 1.2rem 0;
+}
+
+.project-modal-container::after {
+	width: 0;
+	height: 100%;
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.project-modal-inner {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	position: relative;
+	animation: project-modal-scale-in 0.8s ease-in-out both;
+}
+
+.project-modal-close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 2;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	display: flex;
+}
+
+@keyframes project-modal-fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes project-modal-scale-in {
+	0% { transform: scale(0.96); opacity: 0; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+body.modal-is-active {
+	overflow: hidden;
+}

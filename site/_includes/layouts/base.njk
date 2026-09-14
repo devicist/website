@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="{{ description }}" />
+    <link rel="canonical" href="https://devicist.com{{ page.url }}" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    {% if extraCss %}{{ extraCss | safe }}{% endif %}
+    <!-- Analytics: no working GA property exists yet (Universal Analytics/react-ga
+         was sunset by Google in July 2023). Drop a GA4 gtag.js snippet here once
+         a fresh G-XXXXXXX measurement ID is available. -->
+  </head>
+
+  <body class="has-animations">
+    {{ content | safe }}
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1960e060b6a123cf33b617dd7/f2d11f02d0be2c5747f0ab3a8.js");</script>
+    <script defer src="/js/scroll-reveal.js"></script>
+    <script defer src="/js/smooth-scroll.js"></script>
+    {% if extraJs %}{{ extraJs | safe }}{% endif %}
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{% macro sectionHeader(title, paragraph, tag, id, className) %}
+{% if title or paragraph %}
+<div class="section-header{% if className %} {{ className }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <div class="container-xs">
+    {% if title %}
+    {% if tag == "h1" %}<h1 class="mt-0 {{ 'mb-16' if paragraph else 'mb-0' }}">{{ title }}</h1>
+    {% elif tag == "h3" %}<h3 class="mt-0 {{ 'mb-16' if paragraph else 'mb-0' }}">{{ title }}</h3>
+    {% else %}<h2 class="mt-0 {{ 'mb-16' if paragraph else 'mb-0' }}">{{ title }}</h2>
+    {% endif %}
+    {% endif %}
+    {% if paragraph %}<p class="m-0">{{ paragraph }}</p>{% endif %}
+  </div>
+</div>
+{% endif %}
+{% endmacro %}

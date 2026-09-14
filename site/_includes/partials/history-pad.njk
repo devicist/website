@@ -1,0 +1,9 @@
+<script>
+  // If this page was landed on directly (no prior history entry), pad the
+  // history stack so the browser back button goes to the homepage's "work"
+  // section instead of leaving the site entirely.
+  if (window.history.length <= 1) {
+    window.history.replaceState({}, "", "/#work");
+    window.history.pushState({}, "", window.location.pathname);
+  }
+</script>

@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+{% include "partials/header.njk" %}
+<main class="site-content">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<script defer src="/js/nav.js"></script>

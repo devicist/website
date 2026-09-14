@@ -1,0 +1,20 @@
+{% from "partials/gallery.njk" import gallery %}
+
+{% macro design(body, bgImage, images) %}
+<section>
+  <div class="container-sm design">
+    <div>
+      <h3 class="reveal-from-bottom">
+        <img src="{{ bgImage }}" alt="outline" width="175" class="ft-r ml-32 cs-bgImage" />
+        <img src="/assets/images/DesignIcon-white.svg" alt="design icon" width="40" class="mr-8" />
+        Design
+      </h3>
+      <p class="reveal-from-bottom">{{ body }}</p>
+    </div>
+  </div>
+
+  <div class="container-sm cs-gridWrapper reveal-from-bottom">
+    {{ gallery(images, 200, false) }}
+  </div>
+</section>
+{% endmacro %}

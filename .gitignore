@@ -5,10 +5,8 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
-# production
+# build output
+/_site
 /build
 
 # misc
@@ -22,9 +20,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# large source assets not referenced by app code
-src/assets/images/portfolio/blanket/hero.psd
-src/assets/images/portfolio/blanket/new/
-src/assets/images/portfolio/blanket/BlanketForBook/
-src/assets/images/portfolio/blanket/*original-backup*
-src/assets/images/portfolio/blanket/blanket-upscaled.mp4
+# large source assets not referenced by the built site
+site/assets/images/portfolio/blanket/hero.psd
+site/assets/images/portfolio/blanket/new/
+site/assets/images/portfolio/blanket/BlanketForBook/
+site/assets/images/portfolio/blanket/*original-backup*
+site/assets/images/portfolio/blanket/blanket-upscaled.mp4
+
+# retired CRA source tree - kept locally only for its un-migrated original
+# working files (hero.psd, blanket-upscaled.mp4, etc.), not part of the build
+/src

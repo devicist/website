@@ -1,0 +1,91 @@
+{% from "partials/section-header.njk" import sectionHeader %}
+{% from "partials/project-modal.njk" import projectModal %}
+
+<section id="work">
+  <div class="portfolio-inner section-inner">
+    <div class="container reveal-from-bottom mt-32">
+      <a href="/pet/" id="featured" class="projectButton d-block w-100">
+        <div class="card caseStudyCard">
+          <img class="card-img caseStudyImg" src="/assets/images/portfolio/pet/cradled.jpg" alt="PET" />
+          <div class="card-img-overlay d-flex flex-column caseStudyImgGradient"></div>
+        </div>
+      </a>
+
+      <a href="/flux/" class="caseStudyLink">
+        <div class="mt-64 caseStudyWrapper">
+          <div class="card caseStudyCard">
+            <video class="card-img caseStudyImg" autoplay loop muted playsinline>
+              <source src="/assets/images/portfolio/fluxCoverNew.mp4" type="video/mp4" />
+            </video>
+            <div class="card-img-overlay d-flex flex-column caseStudyImgGradient">
+              <p class="caseStudyText has-text-shadow"></p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blanket/" class="caseStudyLink">
+        <div class="mt-64 caseStudyWrapper">
+          <div class="card caseStudyCard">
+            <img class="card-img caseStudyImg caseStudyImgBlanket" src="/assets/images/portfolio/blanket/blanket.jpg" alt="The Blanket" />
+            <div class="card-img-overlay d-flex flex-column caseStudyImgGradient"></div>
+          </div>
+        </div>
+      </a>
+
+      {{ sectionHeader("Commercial", null, "h2", "commercial", "center-content") }}
+
+      <div class="center-content container-sm">
+        <div class="reveal-from-bottom projectGrid">
+          <button class="projectButton border-0" data-modal-target="modal-p3">
+            <div class="card bg-black projectCard">
+              <img class="card-img" src="/assets/images/portfolio/brain/brainFeature.jpg" alt="Illuminated Brain" />
+              <div class="card-img-overlay"></div>
+            </div>
+          </button>
+        </div>
+
+        <div class="reveal-from-right projectGrid">
+          <button class="projectButton border-0" data-modal-target="modal-p1">
+            <div class="card bg-black projectCard">
+              <img class="card-img tintMinor" src="/assets/images/portfolio/Snowflake/snowflakeNewCover.png" alt="LED lighting" />
+              <div class="card-img-overlay d-flex flex-column"></div>
+            </div>
+          </button>
+        </div>
+
+        <div class="reveal-from-left projectGrid">
+          <button class="projectButton border-0" data-modal-target="modal-p2">
+            <div class="card bg-black projectCard">
+              <img class="card-img tintMajor" src="/assets/images/portfolio/braking/kioskCroppedCover.jpg" alt="Regenerative Braking Demo" />
+              <div class="card-img-overlay"></div>
+            </div>
+          </button>
+        </div>
+
+        {{ projectModal("modal-p1", "LED lighting", "We developed interactive LED lighting for studio F-Minus' 30 foot holiday sculpture: Frost. A large illuminated snowflake occupies the atrium of Brookfield Place in Toronto. Touching the surface causes the colors to shift", "https://www.youtube.com/embed/cyy3FVcJ6sU", [
+          {src: "/assets/images/portfolio/Snowflake/snowflake1.jpg"},
+          {src: "/assets/images/portfolio/Snowflake/snowflake2.jpg"},
+          {src: "/assets/images/portfolio/Snowflake/inShop.jpg"},
+          {src: "/assets/images/portfolio/Snowflake/snowflake4.jpg"}
+        ]) }}
+
+        {{ projectModal("modal-p2", "Regenerative Braking Demo", "To profile KIA's regenerative braking technology, we developed an interactive demo. Users press car pedals to drive and brake a full size car wheel mounted in a kiosk. The brake also recharges a virtual battery displayed on the dashboard.", "https://www.youtube.com/embed/Dm9ksx5k4pc", [
+          {src: "/assets/images/portfolio/braking/emailSketch.png"},
+          {src: "/assets/images/portfolio/braking/wheel_sim.gif"},
+          {src: "/assets/images/portfolio/braking/model.png"},
+          {src: "/assets/images/portfolio/braking/wheelBuildCropped.jpg"},
+          {src: "/assets/images/portfolio/braking/kiosk_unfinished.jpg"},
+          {src: "/assets/images/portfolio/braking/wheelBuild.jpg"}
+        ]) }}
+
+        {{ projectModal("modal-p3", "Illuminated Brain", "Interactive model of a brain that responds to touch, displaying various patterns. Produced in collaboration with Globacore Interactive for Dassault Systèmes's Digital Twin exhibit at CES.", "https://www.youtube.com/embed/NIznK_WQr6A", [
+          {src: "/assets/images/portfolio/brain/brainFeature.jpg"},
+          {src: "/assets/images/portfolio/brain/brain2.JPG"},
+          {src: "/assets/images/portfolio/brain/brain3.JPG"},
+          {src: "/assets/images/portfolio/brain/brain4.jpg"}
+        ]) }}
+      </div>
+    </div>
+  </div>
+</section>

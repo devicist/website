@@ -1,0 +1,8 @@
+{% macro videoEmbed(embedUrl, posterSrc, className) %}
+<div class="video-responsive{% if className %} {{ className }}{% endif %}">
+  <button type="button" class="video-facade" data-embed-src="{{ embedUrl }}"{% if posterSrc %} data-poster="{{ posterSrc }}"{% endif %} aria-label="Play video">
+    <img src="" alt="" class="video-facade-thumb" />
+    <span class="video-facade-play" aria-hidden="true"></span>
+  </button>
+</div>
+{% endmacro %}

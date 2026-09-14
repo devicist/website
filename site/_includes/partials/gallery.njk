@@ -1,0 +1,9 @@
+{% macro gallery(images, targetRowHeight, historyIntegrated) %}
+<div class="gallery" data-target-row-height="{{ targetRowHeight or 100 }}"{% if historyIntegrated %} data-lightbox-history="true"{% endif %}>
+  {% for img in images %}
+  <a href="{{ img.src }}" class="gallery-item" data-caption="{{ img.caption or '' }}">
+    <img src="{{ img.src }}" alt="{{ img.alt or '' }}" loading="lazy" />
+  </a>
+  {% endfor %}
+</div>
+{% endmacro %}

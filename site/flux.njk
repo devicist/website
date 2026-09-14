@@ -1,0 +1,55 @@
+---
+layout: layouts/page.njk
+title: "Flux — Kinetic Light Installation | Devicist"
+description: "A 40-foot kinetic installation for Shopify's Toronto office: rotating metallic prisms create rolling waves of refracted light."
+permalink: /flux/
+extraJs: |
+  <script defer src="/js/video-embed.js"></script>
+  <script defer src="/js/gallery-lightbox.js"></script>
+  <script defer src="/js/carousels.js"></script>
+---
+{% from "case-study/intro.njk" import intro %}
+{% from "case-study/design.njk" import design %}
+{% from "case-study/build.njk" import build %}
+{% from "case-study/deploy.njk" import deploy %}
+
+{{ intro(
+  "Flux",
+  "We designed and built a 40 foot kinetic installation for Shopify's Offices in Toronto. Metallic prisms are rotated in coordinated patterns to create rolling waves of refracted light.",
+  "/assets/images/fluxOutline.png",
+  "https://www.youtube.com/embed/Z2o9WQWpmp4?modestbranding=1&rel=0",
+  "flux-video-embed",
+  null,
+  true,
+  true
+) }}
+
+{{ design(
+  "Inspired by bodies of water and existing kinetic artworks, we proposed a design to fill out the long and low ceiling, and detailed it into a 3D model and an animated simulation.",
+  "/assets/images/portfolio/flux/prismGraphic.png",
+  [
+    {src: "/assets/images/portfolio/flux/16.png"},
+    {src: "/assets/images/portfolio/flux/14b.png"},
+    {src: "/assets/images/portfolio/flux/ceilingSim.gif"}
+  ]
+) }}
+
+{{ build(
+  "Prototypes of the rotating module were engineered, and distributed to stakeholders. A report was provided for ESA certification. Parts were sourced and assembled into the full rig and tested for weeks before deployment.",
+  [
+    {src: "/assets/images/portfolio/flux/many_in_progress.jpg"},
+    {src: "/assets/images/portfolio/flux/1.jpg"},
+    {src: "/assets/images/portfolio/flux/prism_prototype.jpg"},
+    {src: "/assets/images/portfolio/flux/8.jpg"},
+    {src: "/assets/images/portfolio/flux/6.jpg"}
+  ]
+) }}
+
+{{ deploy(
+  "The complete work refracts ambient light in rolling wave patterns. Like a lake, viewers can be transfixed by the rhythms, or it can melt into the background.",
+  [
+    {src: "/assets/images/portfolio/flux/flux-4.jpg"},
+    {src: "/assets/images/portfolio/flux/flux-straight.png"},
+    {src: "/assets/images/portfolio/flux/deployImage1_1.jpg"}
+  ]
+) }}

@@ -1,0 +1,59 @@
+---
+layout: layouts/case-study.njk
+title: "Regenerative Braking Demo — Interactive KIA Kiosk | Devicist"
+description: "An interactive trade-show kiosk demonstrating KIA's regenerative braking technology with a full-size spinning wheel and live battery display."
+permalink: /regen/
+extraJs: |
+  <script defer src="/js/video-embed.js"></script>
+  <script defer src="/js/gallery-lightbox.js"></script>
+  <script defer src="/js/carousels.js"></script>
+---
+{% from "case-study/intro.njk" import intro %}
+{% from "case-study/first-contact.njk" import firstContact %}
+{% from "case-study/design.njk" import design %}
+{% from "case-study/build.njk" import build %}
+{% from "case-study/deploy.njk" import deploy %}
+
+{{ intro(
+  "Regenerative Braking Demo",
+  "To promote KIA's regenerative braking technology, we developed an interactive demo. The accelerator pedal drives the car wheel. The brake both stops the wheel and recharges the virtual battery displayed on the dashboard.",
+  "/assets/images/wheelOutlineBG.png",
+  "https://www.youtube.com/embed/o-eduqKUgx8",
+  null,
+  null,
+  false,
+  false
+) }}
+
+{{ firstContact(
+  "Project Proposal",
+  "Hi Guys",
+  "It keeps coming...KIA is looking to create an experience to demonstrate regenerative braking. Idea is that a wheel spins and you press a brake pedal which stops it and watch as a battery display lights up, showing you're braking. We have 6 weeks."
+) }}
+
+{{ design(
+  "We researched a variety of approaches. Building from scratch was optimal. We developed a simulation to help the client decide on the top speed. We sourced components to handle the weight and forces, and created a detailed 3D model to distribute to stakeholders.",
+  "/assets/images/axleOutline.png",
+  [
+    {src: "/assets/images/portfolio/braking/emailSketch.png"},
+    {src: "/assets/images/portfolio/braking/wheel_sim.gif"},
+    {src: "/assets/images/portfolio/braking/model.png"}
+  ]
+) }}
+
+{{ build(
+  "Acquiring the parts, we fabricated the mechanisms. We coded and tested the interaction for hours on end. We delivered our work several weeks early to be integrated into the kiosk cabinet.",
+  [
+    {src: "/assets/images/portfolio/braking/gear_small.jpg"},
+    {src: "/assets/images/portfolio/braking/axle_rework.jpg"},
+    {src: "/assets/images/portfolio/braking/wheelBuildCropped.jpg"},
+    {src: "/assets/images/portfolio/braking/kiosk_unfinished.jpg"}
+  ]
+) }}
+
+{{ deploy(
+  "The kiosk went on tour at Auto Shows across Canada in 2019, and held up to thousands of uses without downtime. Pleased, KIA redeployed the activation for a second year, and engaged us to add interactive lighting to the experience.",
+  [
+    {src: "/assets/images/portfolio/braking/kiosk.jpg"}
+  ]
+) }}

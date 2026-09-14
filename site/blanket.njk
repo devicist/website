@@ -1,0 +1,81 @@
+---
+layout: layouts/page.njk
+title: "The Blanket — Robotic Artwork | Devicist"
+description: "The Blanket is a robotic sculpture that lives on a bed and seeks out the people who share it, developed 2002–2007 and exhibited at Ars Electronica and ISEA."
+permalink: /blanket/
+extraCss: |
+  <link rel="stylesheet" href="/css/blanket.css" />
+extraJs: |
+  <script defer src="/js/carousels.js"></script>
+---
+<section class="blanket-page section">
+  <div class="blanket-page-inner">
+    <div class="blanket-page-hero-video">
+      <video autoplay loop muted playsinline>
+        <source src="/assets/images/portfolio/blanket/blanket.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <h1 class="blanket-page-title">The Blanket</h1>
+    <p class="blanket-page-intro">
+      The Blanket is a robotic artwork that lives on a bed and seeks out the
+      people who share it. It engages through physical contact, nestling
+      into a resting body, climbing onto a chest, allowing itself to be laid
+      upon and cradling those who do.
+    </p>
+    <div class="blanket-page-secondary-image-wrap">
+      <div class="blanket-page-image">
+        <img src="/assets/images/portfolio/blanket/blanket-hero.jpg" alt="The Blanket robotic sculpture resting on a bed" />
+      </div>
+    </div>
+    <dl class="blanket-page-faq">
+      <div>
+        <dd>
+          The blanket's body is a skeletal grid of interconnected motors
+          arranged in a flexible polygonal mesh, with actuation at each
+          joint. Inspired by CGI wireframe models, thes actuated joints
+          allow for fluid deformation, and movement.
+        </dd>
+      </div>
+      <div>
+        <div class="blanket-page-carousel-wrap">
+          <div class="blanket-page-carousel" data-carousel data-active-class="blanket-page-carousel-slide-active" data-dot-active-class="blanket-page-carousel-dot-active">
+            {% for src in blanketCarouselImages %}
+            <div class="blanket-page-carousel-slide{{ ' blanket-page-carousel-slide-active' if loop.first else '' }}" data-carousel-slide>
+              <img src="{{ src }}" alt="The Blanket Project, documentation photo {{ loop.index }}" />
+            </div>
+            {% endfor %}
+
+            <button class="blanket-page-carousel-prev" data-carousel-prev aria-label="Previous photo"></button>
+            <button class="blanket-page-carousel-next" data-carousel-next aria-label="Next photo"></button>
+
+            <div class="blanket-page-carousel-dots">
+              {% for src in blanketCarouselImages %}
+              <button class="blanket-page-carousel-dot{{ ' blanket-page-carousel-dot-active' if loop.first else '' }}" data-carousel-dot aria-label="Show photo {{ loop.index }}"></button>
+              {% endfor %}
+            </div>
+          </div>
+          <p class="blanket-page-carousel-caption">The Blanket Project, 2002–2007</p>
+        </div>
+      </div>
+      <div>
+        <dd>
+          <p>
+            The Blanket is both familiar and strange. A blanket is a
+            transitional object, the first thing a child imbues with life;
+            It's lifelike behaviors are instantly recognizable. But without
+            a body underneath or a face to gaze into, the movements appear
+            as an apparition.
+          </p>
+          <p>
+            The Blanket was developed between 2002 and 2007. It was
+            exhibited at Ars Electronica, ISEA and Future Physical; used in
+            several live performances; and received a special mention in the
+            Japan Media Arts Awards. There are plans to redevelop it with a
+            new design and control system, and make it available for future
+            exhibitions.
+          </p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+{% macro build(body, images) %}
+<section>
+  <div class="container-sm build">
+    <div class="buildContent">
+      <h3 class="reveal-from-bottom">
+        <img src="/assets/images/BuildIcon-white.svg" alt="build icon" width="40" class="mr-8" />
+        Build
+      </h3>
+      <p>{{ body }}</p>
+    </div>
+
+    <div class="reveal-from-bottom ft-l buildCarousel">
+      <div class="cs-carousel" data-carousel>
+        {% for img in images %}
+        <div class="cs-carousel-slide{{ ' is-active' if loop.first else '' }}" data-carousel-slide>
+          <img src="{{ img.src }}" alt="{{ img.alt or '' }}" loading="lazy" />
+        </div>
+        {% endfor %}
+        <button class="cs-carousel-prev" data-carousel-prev aria-label="Previous photo">&#8249;</button>
+        <button class="cs-carousel-next" data-carousel-next aria-label="Next photo">&#8250;</button>
+      </div>
+    </div>
+  </div>
+  <div class="clearing"></div>
+</section>
+{% endmacro %}
