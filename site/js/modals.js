@@ -62,9 +62,19 @@
   });
 
   modals.forEach(function (modal) {
-    var overlay = modal.querySelector(".project-modal-overlay");
+    var container = modal.querySelector(".project-modal-container");
     var closeBtn = modal.querySelector(".project-modal-close");
-    if (overlay) overlay.addEventListener("click", function () { closeModal(modal); });
+    // .project-modal-container covers the full modal area (it's what makes
+    // .project-modal-inner appear vertically centered), so it sits in front
+    // of .project-modal-overlay and is what a "click outside the card"
+    // actually lands on. Only close when the click target is the container
+    // itself - not the card or anything inside it - so this doesn't fire
+    // for ordinary clicks on the modal's content.
+    if (container) {
+      container.addEventListener("click", function (e) {
+        if (e.target === container) closeModal(modal);
+      });
+    }
     if (closeBtn) closeBtn.addEventListener("click", function () { closeModal(modal); });
   });
 

@@ -36,6 +36,12 @@
       {{ sectionHeader("Commercial", null, "h2", "commercial", "center-content") }}
 
       <div class="center-content container-sm">
+        {# .projectGrid tiles are display:inline-block at a third of the
+        row's width each - any whitespace text node between them (from
+        ordinary template formatting) renders as real inline space and is
+        enough to push the third tile onto its own row. The {%- set -%}
+        no-ops below trim that whitespace at render time so the markup can
+        stay readable here while the built HTML has none between the tags. #}
         <div class="reveal-from-bottom projectGrid">
           <button class="projectButton border-0" data-modal-target="modal-p3">
             <div class="card bg-black projectCard">
@@ -44,7 +50,7 @@
             </div>
           </button>
         </div>
-
+        {%- set _spacer = 0 -%}
         <div class="reveal-from-right projectGrid">
           <button class="projectButton border-0" data-modal-target="modal-p1">
             <div class="card bg-black projectCard">
@@ -53,7 +59,7 @@
             </div>
           </button>
         </div>
-
+        {%- set _spacer = 0 -%}
         <div class="reveal-from-left projectGrid">
           <button class="projectButton border-0" data-modal-target="modal-p2">
             <div class="card bg-black projectCard">

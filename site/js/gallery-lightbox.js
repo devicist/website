@@ -111,8 +111,6 @@
 
   var currentItems = [];
   var currentIndex = 0;
-  var historyIntegrated = false;
-  var lightboxOpenViaHistory = false;
 
   function show(index) {
     currentIndex = (index + currentItems.length) % currentItems.length;
@@ -125,23 +123,22 @@
 
   function openLightbox(gallery, index) {
     currentItems = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-item"));
-    historyIntegrated = gallery.getAttribute("data-lightbox-history") === "true";
     show(index);
     lightbox.classList.add("is-active");
     document.body.classList.add("lightbox-is-active");
-    if (historyIntegrated) {
-      window.history.pushState({ type: "lightbox" }, "");
-      lightboxOpenViaHistory = true;
-    }
   }
 
+  // The lightbox deliberately does NOT push its own history entry (it did
+  // at first, so the physical/gesture back button would close just the
+  // photo viewer) - nesting a second pushState on top of the project
+  // modal's own made "back" behavior fragile: any stray history event
+  // (a trackpad swipe grazing the nav arrows, etc.) could pop the photo
+  // viewer's entry and drop back to the modal mid-browse. Escape, the X,
+  // and clicking the backdrop all still close it; the modal underneath
+  // keeps sole ownership of the history entry for this whole interaction.
   function closeLightbox() {
     lightbox.classList.remove("is-active");
     document.body.classList.remove("lightbox-is-active");
-    if (historyIntegrated && lightboxOpenViaHistory) {
-      lightboxOpenViaHistory = false;
-      window.history.back();
-    }
   }
 
   document.querySelectorAll(".gallery").forEach(function (gallery) {
@@ -169,11 +166,8 @@
     if (e.key === "ArrowLeft") show(currentIndex - 1);
     if (e.key === "ArrowRight") show(currentIndex + 1);
   });
-  window.addEventListener("popstate", function (e) {
-    if (lightboxOpenViaHistory && (!e.state || e.state.type !== "lightbox")) {
-      lightboxOpenViaHistory = false;
-      lightbox.classList.remove("is-active");
-      document.body.classList.remove("lightbox-is-active");
-    }
-  });
+  // The lightbox owns no history entry of its own (see closeLightbox), but
+  // if the physical/gesture back button pops the project modal's entry
+  // while a photo is open, close the (now-orphaned) lightbox along with it.
+  window.addEventListener("popstate", closeLightbox);
 })();
