@@ -26,6 +26,13 @@
 	z-index: 2000;
 	align-items: center;
 	justify-content: center;
+	// Without this, a click on the prev/next arrows that includes even a
+	// pixel or two of sideways trackpad drag (very easy to do by accident
+	// on a laptop trackpad) can be interpreted by Chrome/Safari on macOS as
+	// a horizontal swipe, triggering the browser's own back/forward
+	// navigation instead of just advancing the photo - which pops this
+	// lightbox's history entry and drops you back on the project modal.
+	overscroll-behavior-x: none;
 }
 
 .gallery-lightbox.is-active {
