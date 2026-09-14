@@ -39,14 +39,26 @@
 	display: flex;
 }
 
-.gallery-lightbox-figure {
-	max-width: 90vw;
+// prev/figure/next as a row, so the arrows always sit right next to the
+// photo (whatever its aspect ratio) instead of pinned to the screen edges,
+// where they'd end up far from a narrow photo or crowd a wide one.
+.gallery-lightbox-stage {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	max-width: 94vw;
 	max-height: 90vh;
+}
+
+.gallery-lightbox-figure {
+	max-width: 80vw;
+	max-height: 90vh;
+	min-width: 0;
 	margin: 0;
 }
 
 .gallery-lightbox-image {
-	max-width: 90vw;
+	max-width: 80vw;
 	max-height: 80vh;
 	display: block;
 	margin: 0 auto;
@@ -61,13 +73,13 @@
 .gallery-lightbox-close,
 .gallery-lightbox-prev,
 .gallery-lightbox-next {
-	position: absolute;
 	background-color: #000000b3;
 	color: #fff;
 	border: 0;
 	cursor: pointer;
 	border-radius: 50%;
 	transition: background-color 0.2s ease, transform 0.1s ease;
+	flex: 0 0 auto;
 }
 
 .gallery-lightbox-close:hover,
@@ -84,6 +96,7 @@
 }
 
 .gallery-lightbox-close {
+	position: absolute;
 	top: 20px;
 	right: 20px;
 	width: 40px;
@@ -94,20 +107,10 @@
 
 .gallery-lightbox-prev,
 .gallery-lightbox-next {
-	top: 50%;
-	transform: translateY(-50%);
 	width: 48px;
 	height: 48px;
 	font-size: 28px;
 	line-height: 1;
-}
-
-.gallery-lightbox-prev {
-	left: 20px;
-}
-
-.gallery-lightbox-next {
-	right: 20px;
 }
 
 body.lightbox-is-active {

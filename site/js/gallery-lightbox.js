@@ -91,16 +91,24 @@
   };
 
   // ---- Lightbox ----------------------------------------------------------
+  // prev/figure/next are laid out as a row (see .gallery-lightbox-stage) so
+  // the arrows always sit right next to the photo, whatever its aspect
+  // ratio - not pinned to the screen edges, where they'd end up far from a
+  // narrow photo (or crowd a wide one), making them feel like they "jump"
+  // from photo to photo and inviting a miss-click onto the backdrop, which
+  // closes the lightbox.
   var lightbox = document.createElement("div");
   lightbox.className = "gallery-lightbox";
   lightbox.innerHTML =
     '<button class="gallery-lightbox-close" aria-label="Close">&times;</button>' +
+    '<div class="gallery-lightbox-stage">' +
     '<button class="gallery-lightbox-prev" aria-label="Previous photo">&#8249;</button>' +
     '<figure class="gallery-lightbox-figure">' +
     '<img class="gallery-lightbox-image" alt="" />' +
     '<figcaption class="gallery-lightbox-caption"></figcaption>' +
     "</figure>" +
-    '<button class="gallery-lightbox-next" aria-label="Next photo">&#8250;</button>';
+    '<button class="gallery-lightbox-next" aria-label="Next photo">&#8250;</button>' +
+    "</div>";
   document.body.appendChild(lightbox);
 
   var closeBtn = lightbox.querySelector(".gallery-lightbox-close");
@@ -157,8 +165,9 @@
   nextBtn.addEventListener("click", function () {
     show(currentIndex + 1);
   });
+  var stage = lightbox.querySelector(".gallery-lightbox-stage");
   lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target === lightbox || e.target === stage) closeLightbox();
   });
   document.addEventListener("keydown", function (e) {
     if (!lightbox.classList.contains("is-active")) return;
