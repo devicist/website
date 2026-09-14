@@ -30,6 +30,10 @@
     var content = modal.querySelector(".project-modal-content");
     if (content) content.focus();
 
+    // The modal's photo gallery was laid out (or bailed out) while hidden
+    // at zero width - now that it's visible, lay it out for real.
+    if (window.relayoutGalleries) window.relayoutGalleries(modal);
+
     requestAnimationFrame(function () {
       window.scrollTo(0, 0);
       requestAnimationFrame(function () {

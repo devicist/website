@@ -81,6 +81,15 @@
     resizeTimer = setTimeout(layoutAllGalleries, 100);
   });
 
+  // Galleries inside a project modal are `display: none` (so width/height
+  // are 0) until the modal opens, so the image-load-triggered layout above
+  // runs against a zero-width container and bails out - and never re-runs
+  // once the modal becomes visible, since that's not a window resize.
+  // modals.js calls this once it makes a modal visible.
+  window.relayoutGalleries = function (root) {
+    (root || document).querySelectorAll(".gallery").forEach(layoutGallery);
+  };
+
   // ---- Lightbox ----------------------------------------------------------
   var lightbox = document.createElement("div");
   lightbox.className = "gallery-lightbox";
