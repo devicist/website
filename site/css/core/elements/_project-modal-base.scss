@@ -38,8 +38,13 @@
 	// viewport, the ghost kept demanding its own full height *in addition*
 	// to the now-taller card, leaving genuine dead scrollable space below
 	// the card that revealed the page through the semi-transparent overlay.
+	// `safe center` keeps that centering when the card fits, but falls
+	// back to start-alignment once it's taller than the container -
+	// plain `center` would instead center-overflow it both ways, pushing
+	// the top of the card (title, close button) above scrollTop:0 where
+	// no amount of scrolling could ever reach it.
 	display: flex;
-	align-items: center;
+	align-items: safe center;
 	justify-content: center;
 	padding: 1.2rem 0;
 }

@@ -31,7 +31,14 @@
     modalOpenViaHistory = true;
 
     var content = modal.querySelector(".project-modal-content");
-    if (content) content.focus();
+    // preventScroll: true - without it, focusing content taller than the
+    // viewport makes the browser scroll .project-modal-container to bring
+    // the focused element into view, which (combined with `align-items:
+    // safe center` centering shorter cards but start-aligning taller
+    // ones) can leave the container scrolled part way down instead of at
+    // the top, pushing the close button in the card's top corner off
+    // screen with no way to scroll back up to it.
+    if (content) content.focus({ preventScroll: true });
 
     // The modal's photo gallery was laid out (or bailed out) while hidden
     // at zero width - now that it's visible, lay it out for real.

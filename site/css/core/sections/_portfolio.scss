@@ -229,13 +229,18 @@
 .modal-close-icon {
 	padding: 5px;
 
+	// Gives the close icon a dark backing circle on mobile for contrast
+	// against bright photos/video underneath it. This used to also set
+	// `position: fixed; right: 15px` with no `top`, which pulled the icon
+	// out of its button entirely (fixed with an auto top resolves to the
+	// icon's original in-flow position, not wherever the button ended up)
+	// - the button itself already handles positioning
+	// (.project-modal-close in _project-modal-base.scss), so that just
+	// left the close button with nothing visible/clickable where it
+	// should be.
 	@include media('<medium') {
 		background-color: black;
 		border-radius: 10px;
-
-		position: fixed;
-		right: 15px;
-
 	}
 
 }
