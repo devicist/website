@@ -5,10 +5,10 @@ const path = require("path");
 // (BlanketCarousel/PetConferenceCarousel), so dropping a new photo into this
 // folder is still all that's needed to have it appear in the carousel.
 module.exports = () => {
-  const dir = path.join(__dirname, "..", "assets", "images", "portfolio", "pet", "conference-pics");
+  const dir = path.join(__dirname, "..", "assets", "images", "projects", "pet", "conference");
   return fs
     .readdirSync(dir)
     .filter((file) => /\.(jpe?g|png)$/i.test(file))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-    .map((file) => `/assets/images/portfolio/pet/conference-pics/${file}`);
+    .map((file) => `/assets/images/projects/pet/conference/${file}`);
 };
