@@ -3,10 +3,10 @@ layout: layouts/case-study.njk
 title: "Regenerative Braking Demo — Interactive KIA Kiosk | Devicist"
 description: "An interactive trade-show kiosk demonstrating KIA's regenerative braking technology with a full-size spinning wheel and live battery display."
 permalink: /regen/
-extraJs: |
-  <script defer src="/js/video-embed.js"></script>
-  <script defer src="/js/gallery-lightbox.js"></script>
-  <script defer src="/js/carousels.js"></script>
+extraJs:
+  - /js/video-embed.js
+  - /js/gallery-lightbox.js
+  - /js/carousels.js
 ---
 {% from "case-study/intro.njk" import intro %}
 {% from "case-study/first-contact.njk" import firstContact %}

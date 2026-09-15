@@ -16,9 +16,10 @@
     />
     <link rel="manifest" href="/manifest.json" />
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/app.css" />
-    {% if extraCss %}{{ extraCss | safe }}{% endif %}
+    <link rel="stylesheet" href="/css/style.css?v={{ build.version }}" />
+    <link rel="stylesheet" href="/css/app.css?v={{ build.version }}" />
+    {% for href in (extraCss or []) %}<link rel="stylesheet" href="{{ href }}?v={{ build.version }}" />
+    {% endfor %}
     <!-- Analytics: no working GA property exists yet (Universal Analytics/react-ga
          was sunset by Google in July 2023). Drop a GA4 gtag.js snippet here once
          a fresh G-XXXXXXX measurement ID is available. -->
@@ -27,8 +28,9 @@
   <body class="has-animations">
     {{ content | safe }}
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1960e060b6a123cf33b617dd7/f2d11f02d0be2c5747f0ab3a8.js");</script>
-    <script defer src="/js/scroll-reveal.js"></script>
-    <script defer src="/js/smooth-scroll.js"></script>
-    {% if extraJs %}{{ extraJs | safe }}{% endif %}
+    <script defer src="/js/scroll-reveal.js?v={{ build.version }}"></script>
+    <script defer src="/js/smooth-scroll.js?v={{ build.version }}"></script>
+    {% for src in (extraJs or []) %}<script defer src="{{ src }}?v={{ build.version }}"></script>
+    {% endfor %}
   </body>
 </html>

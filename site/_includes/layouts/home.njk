@@ -6,4 +6,4 @@ layout: layouts/base.njk
 {{ content | safe }}
 </main>
 {% include "partials/footer.njk" %}
-<script defer src="/js/nav.js"></script>
+<script defer src="/js/nav.js?v={{ build.version }}"></script>
