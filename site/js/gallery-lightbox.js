@@ -5,6 +5,10 @@
 
   // ---- Justified row layout -------------------------------------------
   function layoutGallery(gallery) {
+    // .gallery--grid (the project modals) is sized by CSS - a fixed
+    // N-column grid of square tiles - instead of this justified-row
+    // layout, so there's nothing for this function to compute.
+    if (gallery.classList.contains("gallery--grid")) return;
     var targetHeight = parseInt(gallery.getAttribute("data-target-row-height"), 10) || 100;
     var items = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-item"));
     var containerWidth = gallery.clientWidth;

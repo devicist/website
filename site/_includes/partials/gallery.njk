@@ -1,5 +1,10 @@
-{% macro gallery(images, targetRowHeight) %}
-<div class="gallery" data-target-row-height="{{ targetRowHeight or 100 }}">
+{# `columns` switches the gallery from its default justified-row layout
+   (rows of varying-width photos sized to fill the container, computed by
+   gallery-lightbox.js) to a fixed N-column grid of square tiles - used by
+   the project modals, which want a tidy 2x2 (or NxM) grid rather than a
+   photo-strip. #}
+{% macro gallery(images, targetRowHeight, columns) %}
+<div class="gallery{% if columns %} gallery--grid{% endif %}" data-target-row-height="{{ targetRowHeight or 100 }}"{% if columns %} style="--gallery-columns: {{ columns }}"{% endif %}>
   {% for img in images %}
   <a href="{{ img.src }}" class="gallery-item" data-caption="{{ img.caption or '' }}">
     <img src="{{ img.src }}" alt="{{ img.alt or '' }}" loading="lazy" />

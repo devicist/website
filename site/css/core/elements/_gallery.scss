@@ -6,9 +6,21 @@
 	flex-wrap: wrap;
 }
 
+// Fixed N-column grid of square tiles (project modals), in place of the
+// justified-row layout above - see gallery.njk's `columns` param.
+.gallery.gallery--grid {
+	display: grid;
+	grid-template-columns: repeat(var(--gallery-columns, 2), 1fr);
+	gap: 4px;
+}
+
 .gallery-item {
 	display: block;
 	overflow: hidden;
+}
+
+.gallery--grid .gallery-item {
+	aspect-ratio: 1 / 1;
 }
 
 .gallery-item img {

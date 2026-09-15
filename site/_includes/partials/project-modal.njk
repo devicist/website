@@ -2,7 +2,7 @@
 {% from "partials/video-embed.njk" import videoEmbed %}
 {% from "partials/gallery.njk" import gallery %}
 
-{% macro projectModal(id, title, body, videoUrl, images) %}
+{% macro projectModal(id, title, body, videoUrl, images, galleryColumns) %}
 <div class="project-modal" id="{{ id }}" role="dialog" aria-modal="true" aria-label="{{ title }}">
   <div class="project-modal-overlay projectOverlay"></div>
   <div class="project-modal-container">
@@ -20,7 +20,7 @@
               {{ videoEmbed(videoUrl) }}
             </div>
             <div class="gridWrapper">
-              {{ gallery(images, 100) }}
+              {{ gallery(images, 100, galleryColumns or 2) }}
             </div>
           </div>
         </section>

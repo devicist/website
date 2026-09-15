@@ -40,8 +40,9 @@
 
 @include media('<medium') {
     .gridWrapper {
-        display: none;
-        width:0;
+        width: 100%;
+        float: none;
+        margin-top: 16px;
     }
     .projectVideo{
         width:100%;
