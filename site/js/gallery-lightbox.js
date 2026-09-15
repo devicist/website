@@ -171,7 +171,14 @@
   });
   document.addEventListener("keydown", function (e) {
     if (!lightbox.classList.contains("is-active")) return;
-    if (e.key === "Escape") closeLightbox();
+    // The lightbox sits on top of a project modal, which has its own
+    // Escape handler (modals.js) on document. Without stopping this event
+    // here, one Escape press would close both layers at once instead of
+    // just backing out of the photo viewer first.
+    if (e.key === "Escape") {
+      e.stopImmediatePropagation();
+      closeLightbox();
+    }
     if (e.key === "ArrowLeft") show(currentIndex - 1);
     if (e.key === "ArrowRight") show(currentIndex + 1);
   });
