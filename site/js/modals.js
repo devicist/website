@@ -24,7 +24,10 @@
     originalScrollY = window.scrollY;
     modal.classList.add("is-active");
     document.body.classList.add("modal-is-active");
-    window.history.pushState({ type: "modal" }, "");
+    // Push the modal's id as the URL hash too, so the address bar always
+    // reflects a copyable link to whatever's open (see the hash-based
+    // auto-open at the bottom of this file for the other half of this).
+    window.history.pushState({ type: "modal", id: modal.id }, "", "#" + modal.id);
     modalOpenViaHistory = true;
 
     var content = modal.querySelector(".project-modal-content");
@@ -88,4 +91,17 @@
       closeModal(activeModal, { skipHistory: true });
     }
   });
+
+  // Support linking directly to a modal, e.g. https://devicist.com/#frost.
+  // Rewrite the page's own entry to the plain URL first, so a later back
+  // navigation closes the modal instead of leaving the site entirely -
+  // matching the two-entry structure (page, then modal) a normal click
+  // to open one creates.
+  if (location.hash) {
+    var initialModal = document.getElementById(location.hash.slice(1));
+    if (initialModal && initialModal.classList.contains("project-modal")) {
+      window.history.replaceState(null, "", location.pathname + location.search);
+      openModal(initialModal);
+    }
+  }
 })();
